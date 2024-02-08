@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .bg-back {
+    @apply bg-[#0D1117];
+  }
+  .bg-front {
+    @apply bg-[#010409];
+  }
+  .bg-block {
+    @apply bg-[#161B22];
+  }
+  .text-site {
+    @apply text-white;
+  }
+  .text-link {
+    @apply text-blue-700;
+  }
+  .text-link-underline {
+    @apply text-blue-700 hover:underline;
+  }
+}
