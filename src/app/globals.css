@@ -3,22 +3,47 @@
 @tailwind utilities;
 
 @layer components {
+  /* back gorund clases */
   .bg-back {
-    @apply bg-[#0D1117];
+    @apply bg-[#F6F8FA] dark:bg-[#0D1117];
   }
   .bg-front {
-    @apply bg-[#010409];
+    @apply bg-[#FFFFFF] dark:bg-[#010409];
   }
   .bg-block {
-    @apply bg-[#161B22];
+    @apply bg-[#FFFFFF] dark:bg-[#161B22];
   }
+  /* text classes */
   .text-site {
-    @apply text-white;
+    @apply text-gray-900 dark:text-white;
+  }
+  .text-site-dimmed {
+    @apply text-gray-800 dark:text-gray-300;
   }
   .text-link {
     @apply text-blue-700;
   }
   .text-link-underline {
     @apply text-blue-700 hover:underline;
+  }
+  .text-dimmed {
+    @apply text-gray-500 dark:text-gray-500;
+  }
+
+  /* border classes */
+  .cornered {
+    @apply rounded;
+  }
+  .border-dimmed {
+    @apply border border-gray-300 dark:border-gray-700;
+  }
+  /* Hover Classes */
+  .hover-route-bg {
+    @apply bg-transparent dark:hover:bg-[#171B20] hover:bg-gray-200 rounded px-2 py-1;
+  }
+
+  /* Effects */
+  .delayed {
+    @apply duration-200 transition-all;
   }
 }
