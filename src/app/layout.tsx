@@ -24,9 +24,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  //  ${inter.className}
   return (
     <html lang="en">
-      <body className={`${inter.className} dark delayed bg-back`}>
+      <body className={`
+      ${inter.className}
+      dark delayed bg-back`}>
         <div className="bg-back text-site">
           <MainLayout>{children}</MainLayout>
         </div>

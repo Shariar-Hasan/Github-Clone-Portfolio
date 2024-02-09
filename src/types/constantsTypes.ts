@@ -3,6 +3,7 @@ export type SocialIconType = {
   icon: JSX.Element;
   url: string;
   textClass: string;
+  media: string;
 }[];
 export type RoutesType = {
   title: string;

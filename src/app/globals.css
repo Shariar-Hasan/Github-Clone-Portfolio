@@ -13,6 +13,11 @@
   .bg-block {
     @apply bg-[#FFFFFF] dark:bg-[#161B22];
   }
+  
+  .bg-block-hard {
+    @apply bg-gray-300 dark:bg-gray-700;
+  }
+
   /* text classes */
   .text-site {
     @apply text-gray-900 dark:text-white;

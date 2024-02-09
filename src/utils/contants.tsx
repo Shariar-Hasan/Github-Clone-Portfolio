@@ -15,38 +15,43 @@ export const twitterUserName: string = "iShariarHasan";
 export const socialLinks: SocialIconType = [
   {
     // github - important
-    title: "Github",
+    title: githubUserName,
     icon: <FaGithubSquare />,
     url: `https://github.com/${githubUserName}`,
     textClass: "text-blue-500",
+    media: "Github",
   },
   {
     // facebook
-    title: "Facebook",
+    title: facebookUserName,
     icon: <FaSquareFacebook />,
     url: `https://www.facebook.com/${facebookUserName}/`,
     textClass: "text-blue-500",
+    media: "Facebook",
   },
   {
     // twitter
-    title: "Twitter",
+    title: "@" + twitterUserName,
     icon: <FaXTwitter />,
     url: `https://twitter.com/${twitterUserName}`,
     textClass: "text-blue-500",
+    media: "Twitter",
   },
   {
     // linkedin
-    title: "LinkedIn",
+    title: linkedInUserName,
     icon: <FaLinkedin />,
     url: `https://www.linkedin.com/in/${linkedInUserName}/`,
     textClass: "text-blue-500",
+    media: "LinkedIn",
   },
   {
     // medium
-    title: "Medium",
+    title: "@" + mediumUserName,
     icon: <BsMedium />,
     url: `https://medium.com/@${mediumUserName}`,
     textClass: "text-blue-500",
+    media: "Medium",
   },
   // {
   //   // any other url you wnat
@@ -54,5 +59,6 @@ export const socialLinks: SocialIconType = [
   //   icon: icons jsx elemetn,
   //   url: url link,
   //   textClass: color theme of the icon from tailwind class,
+  //   media : "Github"
   // },
 ];
