@@ -1,9 +1,10 @@
 import { RoutesType, SideNavRoutesType } from "@/types/constantsTypes";
-import { FaBlog, FaMedal } from "react-icons/fa";
+import { FaBlog, FaMedal, FaStar, FaStickyNote, FaUserGraduate } from "react-icons/fa";
 import { GrProjects } from "react-icons/gr";
 import { IoBookOutline } from "react-icons/io5";
 import { RiContactsBookLine, RiGitRepositoryFill } from "react-icons/ri";
 import { githubUserName } from "./contants";
+import { FiUserPlus, FiUsers } from "react-icons/fi";
 
 export const navbarRotues: RoutesType[] = [
   {
@@ -20,6 +21,11 @@ export const navbarRotues: RoutesType[] = [
     title: "Blogs",
     path: "/my-blogs",
     icon: <FaBlog />,
+  },
+  {
+    title: "Graduation",
+    path: "/my-graduation",
+    icon: <FaUserGraduate />,
   },
   {
     title: "Achievements",
@@ -47,28 +53,28 @@ export const sideBarRoutes: SideNavRoutesType[][] = [
       // my gist
       title: "Gists List",
       path: `https://gist.github.com/${githubUserName}`,
-      icon: <RiGitRepositoryFill />,
+      icon: <FaStickyNote />,
       isExternal: true,
     },
     {
       // my stars
       title: "My Stars",
       path: `https://github.com/${githubUserName}?tab=stars`,
-      icon: <RiGitRepositoryFill />,
+      icon: <FaStar />,
       isExternal: true,
     },
     {
       // my followers
       title: "Followers",
       path: `https://github.com/${githubUserName}?tab=followers`,
-      icon: <RiGitRepositoryFill />,
+      icon: <FiUsers />,
       isExternal: true,
     },
     {
       // my following
       title: "Following",
       path: `https://github.com/${githubUserName}?tab=following`,
-      icon: <RiGitRepositoryFill />,
+      icon: <FiUserPlus />,
       isExternal: true,
     },
   ],

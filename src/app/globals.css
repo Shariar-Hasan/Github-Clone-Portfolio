@@ -13,6 +13,13 @@
   .bg-block {
     @apply bg-[#FFFFFF] dark:bg-[#161B22];
   }
+  .bg-brand {
+    @apply bg-green-500;
+  }
+  .bg-block-hard {
+    @apply bg-gray-300 dark:bg-gray-700;
+  }
+
   /* text classes */
   .text-site {
     @apply text-gray-900 dark:text-white;
@@ -29,13 +36,18 @@
   .text-dimmed {
     @apply text-gray-500 dark:text-gray-500;
   }
-
+  .text-brand {
+    @apply text-green-500;
+  }
   /* border classes */
   .cornered {
     @apply rounded;
   }
   .border-dimmed {
     @apply border border-gray-300 dark:border-gray-700;
+  }
+  .divider-x {
+    @apply w-full h-[0.5px] dark:bg-gray-700 bg-gray-300 my-2;
   }
   /* Hover Classes */
   .hover-route-bg {
@@ -45,5 +57,13 @@
   /* Effects */
   .delayed {
     @apply duration-200 transition-all;
+  }
+  .clicked {
+    @apply active:scale-[.97] duration-200;
+  }
+}
+@layer utilities {
+  .animated_text {
+    @apply relative after:content-[attr(title)] after:overflow-hidden after:absolute after:top-0 after:text-nowrap  after:left-0 after:transition-all after:border-r-4 after:text-green-600 after:animate-[animText_5s_linear_infinite] after:origin-left after:z-[1];
   }
 }

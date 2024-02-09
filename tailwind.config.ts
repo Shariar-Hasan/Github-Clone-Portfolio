@@ -8,7 +8,14 @@ const config: Config = {
   ],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        animText: {
+          "0%, 100%": { maxWidth: "0%" },
+          "90%": { maxWidth: "100%" },
+        },
+      },
+    },
   },
   plugins: [],
 };

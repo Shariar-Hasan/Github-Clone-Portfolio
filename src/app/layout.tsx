@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter} from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import MainLayout from "@/components/BaseUI/MainLayout";
 import { NextFont } from "next/dist/compiled/@next/font";
@@ -24,9 +24,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  //  ${inter.className}
   return (
     <html lang="en">
-      <body className={`${inter.className} dark delayed bg-back`}>
+      <head>
+        <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+      </head>
+
+      <body
+        className={`
+      ${inter.className}
+      dark delayed bg-back`}
+      >
         <div className="bg-back text-site">
           <MainLayout>{children}</MainLayout>
         </div>
