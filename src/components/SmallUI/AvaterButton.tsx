@@ -1,11 +1,18 @@
-"use client";
+
 import { GitHubUser } from "@/types/propsTypes";
 import Image from "next/image";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import SideNav from "../Layers/SideNav";
 
-const AvaterButton = ({ userData }: { userData: GitHubUser }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+const AvaterButton = ({
+  userData,
+  isSidebarOpen,
+  setIsSidebarOpen,
+}: {
+  userData: GitHubUser;
+  isSidebarOpen: boolean;
+  setIsSidebarOpen:React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const { avatar_url, login, name } = userData;
   return (
     <div className="flex items-center">

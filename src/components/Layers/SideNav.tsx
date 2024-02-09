@@ -52,7 +52,8 @@ const SideNav = ({ isOpen, setIsOpen, avatar_url, login, name }: propType) => {
         </div>
         <div className="h-full overflow-auto">
           {sideBarRoutes?.map((item: SideNavRoutesType[], index) => (
-            <ul key={index} className="px-3 py-2">
+            <ul key={index} className="px-3 py-1">
+              {index !== 0 && <div className="divider-x" />}
               {item.map(
                 (
                   { title, icon, path, isExternal }: SideNavRoutesType,
