@@ -1,5 +1,5 @@
 import { RoutesType, SideNavRoutesType } from "@/types/constantsTypes";
-import { FaBlog, FaMedal } from "react-icons/fa";
+import { FaBlog, FaMedal, FaUserGraduate } from "react-icons/fa";
 import { GrProjects } from "react-icons/gr";
 import { IoBookOutline } from "react-icons/io5";
 import { RiContactsBookLine, RiGitRepositoryFill } from "react-icons/ri";
@@ -20,6 +20,11 @@ export const navbarRotues: RoutesType[] = [
     title: "Blogs",
     path: "/my-blogs",
     icon: <FaBlog />,
+  },
+  {
+    title: "Graduation",
+    path: "/my-graduation",
+    icon: <FaUserGraduate />,
   },
   {
     title: "Achievements",

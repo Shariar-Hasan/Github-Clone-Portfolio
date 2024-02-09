@@ -2,6 +2,7 @@ import { SocialIconType } from "@/types/constantsTypes";
 import { BsMedium } from "react-icons/bs";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { FaSquareFacebook, FaXTwitter } from "react-icons/fa6";
+import { SiGmail } from "react-icons/si";
 
 // social media handles
 // any one changing , onnly change this values
@@ -10,15 +11,24 @@ export const mediumUserName: string = "ShariarHasan";
 export const facebookUserName: string = "iShariarHasan";
 export const linkedInUserName: string = "iShariarHasan";
 export const twitterUserName: string = "iShariarHasan";
+export const contactMail: string = "shahriar.hasan.1523@gmail.com";
 
 // social Links
 export const socialLinks: SocialIconType = [
+  {
+    // mail - important
+    title: contactMail,
+    icon: <SiGmail />,
+    url: `mailto:${contactMail}`,
+    textClass: "text-red-500",
+    media: "Contact Mail",
+  },
   {
     // github - important
     title: githubUserName,
     icon: <FaGithubSquare />,
     url: `https://github.com/${githubUserName}`,
-    textClass: "text-blue-500",
+    textClass: "text-white",
     media: "Github",
   },
   {
@@ -26,7 +36,7 @@ export const socialLinks: SocialIconType = [
     title: facebookUserName,
     icon: <FaSquareFacebook />,
     url: `https://www.facebook.com/${facebookUserName}/`,
-    textClass: "text-blue-500",
+    textClass: "text-blue-700",
     media: "Facebook",
   },
   {
@@ -34,7 +44,7 @@ export const socialLinks: SocialIconType = [
     title: "@" + twitterUserName,
     icon: <FaXTwitter />,
     url: `https://twitter.com/${twitterUserName}`,
-    textClass: "text-blue-500",
+    textClass: "text-blue-300",
     media: "Twitter",
   },
   {
@@ -42,7 +52,7 @@ export const socialLinks: SocialIconType = [
     title: linkedInUserName,
     icon: <FaLinkedin />,
     url: `https://www.linkedin.com/in/${linkedInUserName}/`,
-    textClass: "text-blue-500",
+    textClass: "text-blue-900",
     media: "LinkedIn",
   },
   {
@@ -50,7 +60,7 @@ export const socialLinks: SocialIconType = [
     title: "@" + mediumUserName,
     icon: <BsMedium />,
     url: `https://medium.com/@${mediumUserName}`,
-    textClass: "text-blue-500",
+    textClass: "text-white",
     media: "Medium",
   },
   // {
@@ -62,3 +72,11 @@ export const socialLinks: SocialIconType = [
   //   media : "Github"
   // },
 ];
+
+// personal basic information
+export const basicInfo = {
+  name : "Shariar Hasan",
+  title: "Front-End Developer",
+  location: "Bangladesh",
+  email: "shariar.hasan.1523@gmail.com",
+}
