@@ -1,7 +1,6 @@
 
 import { GitHubUser } from "@/types/propsTypes";
 import Image from "next/image";
-import { SetStateAction, useState } from "react";
 import SideNav from "../Layers/SideNav";
 
 const AvaterButton = ({

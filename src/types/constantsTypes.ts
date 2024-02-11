@@ -4,7 +4,7 @@ export type SocialIconType = {
   url: string;
   textClass: string;
   media: string;
-}[];
+};
 export type RoutesType = {
   title: string;
   path: string;
@@ -12,4 +12,12 @@ export type RoutesType = {
 };
 export type SideNavRoutesType = RoutesType & {
   isExternal: boolean;
+};
+
+export type AboutMeType = {
+  name: string;
+  title: string;
+  location?: string;
+  email: string;
+  aboutMeJsx: JSX.Element;
 };

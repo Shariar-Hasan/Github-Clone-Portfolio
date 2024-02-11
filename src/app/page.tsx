@@ -14,21 +14,9 @@ export default function Home() {
       </h1>
       <h2 className="text-base md:text-xl my-2">
         A passionate <span className="text-brand">{basicInfo?.title}</span> from{" "}
-        {basicInfo?.location}
+        {basicInfo?.location}.
       </h2>
-      <p className="tracking-widest my-2 text-site-dimmed">
-        I am a{" "}
-        <span className="text-brand">
-          FrontEnd focused MERN Stack enthusiastic🥳
-        </span>{" "}
-        person with proficient knowledge of Web Devlopment technologies👨‍💻🧑‍💻and I
-        am a fresh <span className="text-brand"> CSE graduate🎓</span> with
-        B.Sc. Engineering from University of Chittagong, Bangladesh. I have
-        quite a comfortable knowledge about{" "}
-        <span className="text-brand">Competitive Programming with DSA ✍️</span>.
-        I love to make complex code⌨️ into readable and efficient clean code. I
-        love to travel✈️, cycling🚴, swimming🏊 and playing football⚽
-      </p>
+      <div className="text-xs md:text-sm">{basicInfo?.aboutMeJsx}</div>
       <div className="divider-x" />
       <ExpertiseSection heading="My Skills" list={skills} />
       <ExpertiseSection heading="Comfortable Tools" list={tools} />

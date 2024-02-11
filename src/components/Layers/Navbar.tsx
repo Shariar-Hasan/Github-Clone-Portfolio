@@ -18,7 +18,7 @@ const Navbar = () => {
           >
             <span className="flex items-center cornered  gap-2 text-sm  bg-transparent px-3 py-1 hover:bg-block ">
               <span>{icon}</span>
-              <span>{title}</span>
+              <span className="hidden md:inline-block">{title}</span>
             </span>
           </NavLink>
         ))}

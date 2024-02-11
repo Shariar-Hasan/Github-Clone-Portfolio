@@ -3,7 +3,7 @@ import { sideBarRoutes } from "@/utils/routes";
 import Image from "next/image";
 import Link from "next/link";
 import React, { Dispatch, SetStateAction } from "react";
-import { FaHome, FaTimes } from "react-icons/fa";
+import {  FaTimes } from "react-icons/fa";
 type propType = {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;

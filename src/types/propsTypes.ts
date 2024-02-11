@@ -1,5 +1,3 @@
-import { HtmlHTMLAttributes } from "react";
-
 export type ChildrenType = { children: React.ReactNode };
 export type GitHubUser = {
   login: string;
@@ -35,7 +33,18 @@ export type GitHubUser = {
   created_at: string;
   updated_at: string;
 };
-
+export type MediumBlog = {
+  title: string;
+  pubDate: string;
+  link: string;
+  guid: string;
+  author: string;
+  thumbnail: string;
+  description: string;
+  content: string;
+  enclosure: object;
+  categories: string[];
+};
 export type NavlinkPropType = {
   children: React.ReactNode;
   href: string;

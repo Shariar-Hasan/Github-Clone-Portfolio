@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   //  ${inter.className}
   return (
-    <html lang="en">
+    <html lang="en" className="dark scrollb ar-brand">
       <head>
         <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       </head>
@@ -34,7 +34,7 @@ export default function RootLayout({
       <body
         className={`
       ${inter.className}
-      dark delayed bg-back`}
+      delayed bg-back`}
       >
         <div className="bg-back text-site">
           <MainLayout>{children}</MainLayout>
