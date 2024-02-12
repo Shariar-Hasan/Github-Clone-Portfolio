@@ -28,7 +28,7 @@ const HeadNavbar = ({ userData }: { userData: GitHubUser }) => {
             className="flex gap-x-3 items-center "
           >
             <FaGithub className="text-3xl" />
-            <h5 className="text-sm font-semibold hover-route-bg">
+            <h5 className="text-sm font-semibold hover-route-bg hidden md:inline-block">
               Shariar Hasan
             </h5>
           </a>

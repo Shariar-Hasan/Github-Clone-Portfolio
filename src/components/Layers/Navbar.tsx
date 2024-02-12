@@ -4,7 +4,7 @@ import { navbarRotues } from "@/utils/routes";
 
 const Navbar = () => {
   return (
-    <div className="px-3 bg-front">
+    <div className="px-3 bg-front md:relative sticky top-0">
       <div className="flex gap-x-3 ">
         {navbarRotues?.map(({ title, path, icon }, index) => (
           <NavLink

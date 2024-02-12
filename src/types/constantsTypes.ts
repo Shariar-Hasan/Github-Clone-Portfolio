@@ -1,8 +1,7 @@
-export type SocialIconType = {
+export type ContactIconType = {
   title: string;
   icon: JSX.Element;
   url: string;
-  textClass: string;
   media: string;
 };
 export type RoutesType = {

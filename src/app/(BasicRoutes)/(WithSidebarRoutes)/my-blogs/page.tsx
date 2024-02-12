@@ -1,4 +1,5 @@
 import BlogSection from "@/components/Layers/BlogSection";
+import SubHeading from "@/components/SmallUI/SubHeading";
 const BlogPage = async () => {
   // const res = await fetch(
   //   `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${mediumUserName}`
@@ -8,7 +9,7 @@ const BlogPage = async () => {
   // console.log({ data });
   return (
     <div>
-      blgo page
+      <SubHeading>My Blogs</SubHeading>
       <BlogSection />
     </div>
   );

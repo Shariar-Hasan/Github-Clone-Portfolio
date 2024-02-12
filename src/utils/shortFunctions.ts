@@ -22,6 +22,9 @@ export const downloadCV = () => {
   );
 };
 
-export const isIncluded = (string = "", pattern = "") => {
+export const isIncluded = (string: string = "", pattern: string = "") => {
   return string.toLowerCase().includes(pattern.toLowerCase());
+};
+export const toBlogSlug = (string: string = "") => {
+  return string.replace("https://medium.com/p/", "");
 };

@@ -1,44 +1,24 @@
-"use client";
-import React, { useEffect } from "react";
-import useFetch from "@/hooks/useFetch";
-import toast from "react-hot-toast";
+import BlogCard from "../SmallUI/cards/BlogCard";
+import { MediumBlog } from "@/types/propsTypes";
+import { BASE_URL } from "@/utils/siteConstants";
+import NoItemAvailable from "../SmallUI/NoItemAvailable";
 
-const BlogSection = () => {
-  //   const [blogs, setBlogs] = useState([]);
-  const { isLoading, data, error, fetchData } = useFetch();
-  //   useEffect(() => {
-  //     async function call() {
-  //       await fetchData(
-  //         `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${mediumUserName}`
-  //       );
-  //     }
-  //     call();
-  //   }, []);
-  useEffect(() => {
-    if (error) toast.error(error);
-  }, [error]);
+const BlogSection = async () => {
+  const response = await fetch(`${BASE_URL}/api/blogs`);
+  const { data, success } = await response.json();
+  const { items } = data;
+  // console.log({ items, data, success });
   return (
     <div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-        {/* {isLoading ? (
-          <ClientLoading />
-        ) : data ? (
-          data?.items?.map((blog: MediumBlog, i: number) => (
-            <RevealWrapper
-              key={blog.guid}
-              delay={i * 0}
-              duration={500}
-              distance="0px"
-              reset={false}
-            >
-              <BlogCard blog={blog} />
-            </RevealWrapper>
-          ))
-        ) : (
-          <NoItemAvailable text="No Blogs Available" />
-        )} */}
-        No Blogs Available Right Now.
-      </div>
+      {success ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 ">
+          {items?.map((blog: MediumBlog, i: number) => (
+            <BlogCard blog={blog} index={i} key={blog?.guid} />
+          ))}
+        </div>
+      ) : (
+        <NoItemAvailable text="No Blogs Available" />
+      )}
     </div>
   );
 };

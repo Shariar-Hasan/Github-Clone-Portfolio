@@ -17,7 +17,7 @@ const ScrollToTop = () => {
     <span
       className={`z-[100] ${
         !isVisible ? "opacity-0 invisible" : "opacity-40"
-      } hover:opacity-100 fixed bottom-[20px] right-[20px] text-site md:text-[45px] text-[40px] cursor-pointer duration-150`}
+      } hover:opacity-100 fixed bottom-[20px] right-[20px] text-site md:text-[45px] text-[30px] cursor-pointer duration-150`}
       onClick={scrollToTop}
     >
       <FaArrowUp />

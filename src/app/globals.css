@@ -47,7 +47,7 @@
     @apply border-green-500;
   }
   .border-dimmed {
-    @apply border border-gray-300 dark:border-gray-700;
+    @apply  border-gray-300 dark:border-gray-700;
   }
   .divider-x {
     @apply w-full h-[0.5px] dark:bg-gray-700 bg-gray-300 my-2;

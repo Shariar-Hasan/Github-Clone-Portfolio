@@ -3,10 +3,10 @@ import { MdOutlineContentPasteSearch } from "react-icons/md";
 
 const NoItemAvailable = ({ text }: { text: string }) => {
   return (
-    <div className="flex justify-center items-center">
-      <div className="flex flex-col items-center">
-        <MdOutlineContentPasteSearch className="text-4xl" />
-        <h1 className="text-2xl font-bold text-gray-900">{text}</h1>
+    <div className="flex justify-center items-center my-2">
+      <div className="flex flex-col items-center p-10">
+        <MdOutlineContentPasteSearch className="text-4xl text-dimmed" />
+        <h1 className="text-2xl font-bold text-dimmed">{text}</h1>
       </div>
     </div>
   );

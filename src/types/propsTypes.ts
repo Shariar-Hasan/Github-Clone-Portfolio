@@ -52,3 +52,18 @@ export type NavlinkPropType = {
   nonActiveClassName: string;
   className: string;
 };
+export type ProjectType = {
+  title: string;
+  slug?: string;
+  category: string;
+  shortDescription: string;
+  description: string;
+  thumbnail: string;
+  links: {
+    title: string;
+    url: string;
+  }[];
+  tags: string[];
+  createdAt: number;
+  updatedAt: number;
+};

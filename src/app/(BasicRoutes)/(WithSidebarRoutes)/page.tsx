@@ -14,9 +14,9 @@ export default function Home() {
       </h1>
       <h2 className="text-base md:text-xl my-2">
         A passionate <span className="text-brand">{basicInfo?.title}</span> from{" "}
-        {basicInfo?.location}.
+        {basicInfo?.location}{"."}
       </h2>
-      <div className="text-xs md:text-sm">{basicInfo?.aboutMeJsx}</div>
+      <div className="text-xs md:text-sm my-6">{basicInfo?.aboutMeJsx}</div>
       <div className="divider-x" />
       <ExpertiseSection heading="My Skills" list={skills} />
       <ExpertiseSection heading="Comfortable Tools" list={tools} />
