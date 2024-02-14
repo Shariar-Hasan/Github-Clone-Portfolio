@@ -52,12 +52,11 @@ export type NavlinkPropType = {
   nonActiveClassName: string;
   className: string;
 };
-export type ProjectType = {
+export type AwardType = {
   _id?: string;
   title: string;
   slug?: string;
   category: string;
-  shortDescription: string;
   description: string;
   thumbnail: string;
   links: {
@@ -68,5 +67,10 @@ export type ProjectType = {
   createdAt: number;
   updatedAt: number;
 };
+export type ProjectType = AwardType & {
+  shortDescription: string;
+};
 
 export type SearchParamsType = { [key: string]: string };
+
+export type SelectTagListType = { title: string; value: string };

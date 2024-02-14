@@ -1,5 +1,6 @@
 "use client";
-import {  useRef, useState } from "react";
+import { SelectTagListType } from "@/types/propsTypes";
+import { useEffect, useRef, useState } from "react";
 type PropsType = {
   list: any[];
   label: string;
@@ -7,11 +8,10 @@ type PropsType = {
   defaultValue: string;
 };
 const Select = ({ list = [], label, setValue, defaultValue }: PropsType) => {
-  const [selectValue, setSelectValue] = useState(defaultValue);
+  const [selectValue, setSelectValue] = useState("");
   const [screenExceeded, setScreenExceeded] = useState(true);
   const listRef = useRef<any>(null);
-  const selectRef = useRef<any>(null);
-
+  // csutom fution to show the pop up in certein accurate place
   const handleFocus = (e: any) => {
     const winheight = window.innerHeight;
     const selectTagTopDistance = e.target.getBoundingClientRect().top;
@@ -20,14 +20,14 @@ const Select = ({ list = [], label, setValue, defaultValue }: PropsType) => {
     const top = listRef?.current?.getBoundingClientRect().top;
     const bottom = listRef?.current?.getBoundingClientRect().bottom;
     const selectTagSize = Math.abs(top - bottom);
-    console.log({
-      selectTagTopDistance,
-      selectTagBottomDistance,
-      selectTagSize,
-      top,
-      bottom,
-      listRef,
-    });
+    // console.log({
+    //   selectTagTopDistance,
+    //   selectTagBottomDistance,
+    //   selectTagSize,
+    //   top,
+    //   bottom,
+    //   listRef,
+    // });
     if (selectTagBottomDistance > selectTagSize) {
       setScreenExceeded(true);
     } else if (selectTagTopDistance > selectTagSize) {
@@ -36,46 +36,44 @@ const Select = ({ list = [], label, setValue, defaultValue }: PropsType) => {
       setScreenExceeded((prev) => prev);
     }
   };
-  const handleSelect = (val: string) => {
-    setValue(val);
-    selectRef.current.value = val;
-    setSelectValue(val);
+
+  // handling the seletion
+  const handleSelect = ({ title, value }: SelectTagListType) => {
+    setValue(value);
+    setSelectValue(title);
   };
-
+  useEffect(() => {
+    setSelectValue(
+      list?.find(({ value }) => value === defaultValue)?.title || defaultValue
+    );
+  }, []);
   return (
-    <div className="mt-4">
-      <div className="relative w-full  group ">
-        <button
-          className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer cursor-pointer"
-          // value={selectValue}
-          onFocus={handleFocus}
-          ref={selectRef}
+    <div className="relative w-full group">
+      <label className="text-xs text-dimmed">{label}</label>
+      <button
+        className="py-2.5 px-3 w-full md:text-sm text-site bg-transparent border border-dimmed  focus:border-brand focus:outline-none focus:ring-0 peer flex items-center justify-between cornered font-semibold"
+        onFocus={handleFocus}
+      >
+        {selectValue}
+      </button>
+      {list?.length > 0 && (
+        <div
+          ref={listRef}
+          className={`absolute z-[99999] ${
+            screenExceeded ? "top-[100%]" : "bottom-[100%]"
+          } left-[50%] translate-x-[-50%] rounded-md overflow-hidden shadow-lg min-w-[200px] w-max peer-focus:visible peer-focus:opacity-100 opacity-0 invisible duration-200 p-2 bg-back border border-dimmed text-xs md:text-sm`}
         >
-          {selectValue}
-        </button>
-        {list?.length > 0 && (
-          <div
-            ref={listRef}
-            className={`absolute z-[99999] ${
-              screenExceeded ? "top-[110%]" : "bottom-[110%]"
-            } left-[50%] translate-x-[-50%] rounded-md overflow-hidden shadow-lg w-full peer-focus:visible peer-focus:opacity-100 opacity-0 invisible duration-200 p-2 bg-back`}
-          >
-            {list?.map(({ title, value: val }, i) => (
-              <div
-                key={i}
-                onClick={() => handleSelect(val)}
-                className="w-full block cursor-pointer hover:bg-front hover:text-link px-3 py-1 rounded-md"
-              >
-                {title}
-              </div>
-            ))}
-          </div>
-        )}
-
-        <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3  origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-          {label}
-        </label>
-      </div>
+          {list?.map(({ title, value }, i) => (
+            <div
+              key={title + i}
+              onClick={() => handleSelect({ title, value })}
+              className="w-full block cursor-pointer hover:bg-front hover:text-link px-3 py-1 rounded-md"
+            >
+              {title}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

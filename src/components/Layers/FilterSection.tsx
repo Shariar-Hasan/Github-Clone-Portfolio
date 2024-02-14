@@ -1,62 +1,79 @@
 "use client";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import SelectInput from "../FormElements/SelectNonForm";
 import { BASE_URL } from "@/utils/siteConstants";
 import Select from "../FormElements/SelectNonForm";
+// custom sort list data
+const sortList: { title: string; value: string }[] = [
+  { title: "Newest First", value: "desc" },
+  { title: "Oldest First", value: "asc" },
+];
 type CategoryType = { category: string; count: number };
-const FilterSection = () => {
+
+const FilterSection = ({
+  categoryFetchString,
+}: {
+  categoryFetchString: string;
+}) => {
+  const pathname = usePathname();
   const router = useRouter();
-  const [category, setCategory] = useState("All");
-  const [categoryList, setCategoryList] = useState<CategoryType[]>([]);
   const searchParams = useSearchParams();
+  const [category, setCategory] = useState(
+    searchParams.get("category") || "All"
+  );
+  const [sort, setSort] = useState(searchParams.get("sort") || "desc");
+  const [categoryList, setCategoryList] = useState<CategoryType[]>([]);
   // fetch categories from database
   useEffect(() => {
-    fetch(`${BASE_URL}/api/projects/categories`)
+    fetch(`${categoryFetchString}`)
       .then((response) => response.json())
       .then((data: { data: CategoryType[] }) => {
-        setCategoryList(data.data);
-        console.log("re fetched", data.data);
+        const categoryData = data.data;
+        const totalData = data.data.reduce((acc, { count }) => acc + count, 0);
+        categoryData.unshift({ category: "All", count: totalData });
+        setCategoryList(categoryData);
+        console.log("Re Fetched categorylist");
       });
   }, []);
-  useEffect(() => {
-    router.push(`/my-projects?category=${category}`);
-  }, [category]);
 
+  // fetch accoding to query
   useEffect(() => {
-    // const changedCategory = searchParams.get("category");
-    console.log("cahgnesd category: " + searchParams);
-  }, [searchParams]);
+    const queryParams = {
+      category,
+      sort,
+    };
+    const queryString = Object.entries(queryParams)
+      .map(([key, value]) => `${key}=${value}`)
+      .join("&");
+    router.replace(`${pathname}/?${queryString}`);
+  }, [category, sort]);
+
   return (
-    <div className="grid grid-cols-4">
-      <Select
-        defaultValue="All"
-        label="All"
-        list={categoryList.map(({ category, count }: CategoryType) => ({
-          title: `${category} (${count})`,
-          value: category,
-        }))}
-        setValue={setCategory}
-      />
-      <div>
-        <select
-          className="w-full p-2 mt-2 border bg-inherit rounded-md focus:outline-none focus:ring-2"
-          name="category"
-          onChange={(e) => setCategory(e.target.value)}
-          defaultValue={"All"}
-        >
-          <option className="" value={"All"}>
-            All
-          </option>
-          {categoryList?.map(({ category, count }, i) => {
-            return (
-              <option key={category + i} className="" value={category}>
-                {category} ({count})
-              </option>
-            );
-          })}
-        </select>
+    <div>
+      <div className="flex md:flex-row flex-col items-center justify-end gap-2">
+        <div className="min-w-[150px]">
+          <Select
+            defaultValue="All"
+            label="Select Category"
+            list={categoryList.map(({ category, count }: CategoryType) => ({
+              title: `${category} (${count})`,
+              value: category,
+            }))}
+            setValue={setCategory}
+          />
+        </div>
+
+        <div className="min-w-[150px]">
+          <Select
+            defaultValue={sort}
+            label="Sorted by"
+            list={sortList}
+            setValue={setSort}
+          />
+        </div>
       </div>
+      <div className="divider-x" />
     </div>
   );
 };

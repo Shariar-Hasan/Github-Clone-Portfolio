@@ -29,12 +29,23 @@ export const getProjects = async (searchParams: SearchParamsType) => {
   const newQueryString = Object.keys(searchParams)
     .map((key) => `${key}=${searchParams[key]}`)
     .join("&");
-  console.log({ newQueryString });
+  // console.log({ newQueryString });
   const result = await fetch(`${BASE_URL}/api/projects?${newQueryString}`, {
-    // next: {
-    //   revalidate: 3600 * 24,
-    // },
-    cache: "no-cache",
+    next: {
+      revalidate: 20,
+    },
+  });
+  const data = await result.json();
+  return data;
+};
+export const getAwards = async (searchParams: SearchParamsType) => {
+  const newQueryString = Object.keys(searchParams)
+    .map((key) => `${key}=${searchParams[key]}`)
+    .join("&");
+  const result = await fetch(`${BASE_URL}/api/awards?${newQueryString}`, {
+    next: {
+      revalidate: 5,
+    },
   });
   const data = await result.json();
   return data;

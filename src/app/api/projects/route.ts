@@ -4,11 +4,18 @@ import { Project } from "./modal";
 
 export const GET = async (req: NextRequest): Promise<NextResponse> => {
   const queryParams = req.nextUrl.searchParams;
-  console.log({ queryParams });
-  const dbQueryObject = {};
+  const dbQueryObject = {
+    category:
+      queryParams.get("category") !== "All"
+        ? queryParams.get("category")
+        : { $exists: true },
+  };
+  console.log({ queryParams, dbQueryObject });
   try {
     await connectToDb();
-    const projects = await Project.find({});
+    const projects = await Project.find({ ...dbQueryObject }).sort({
+      createdAt: queryParams.get("sort") === "desc" ? -1 : 1,
+    });
     return NextResponse.json({ data: projects, success: true });
   } catch (error: any) {
     return NextResponse.json({ data: error.message, success: true });

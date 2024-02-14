@@ -65,7 +65,7 @@ const ContactMeForm = () => {
           />
           <button
             type="submit"
-            className="hover:bg-brand hover:text-white delayed w-full border-brand border px-5 py-2 mt-3 cornered"
+            className="hover:bg-brand hover:text-white delayed w-full border-dimmed border px-5 py-2 mt-3 cornered"
           >
             Send Message
           </button>

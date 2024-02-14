@@ -14,7 +14,7 @@ export const navbarRotues: RoutesType[] = [
   },
   {
     title: "Projects",
-    path: "/my-projects",
+    path: "/my-projects?category=All&sort=desc",
     icon: <GrProjects />,
   },
   {
@@ -29,7 +29,7 @@ export const navbarRotues: RoutesType[] = [
   },
   {
     title: "Awards",
-    path: "/my-awards",
+    path: "/my-awards?category=All&sort=desc",
     icon: <FaMedal />,
   },
   {

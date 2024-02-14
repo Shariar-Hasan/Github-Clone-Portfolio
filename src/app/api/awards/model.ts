@@ -1,7 +1,7 @@
-import { ProjectType } from "@/types/propsTypes";
+import { AwardType } from "@/types/propsTypes";
 import mongoose from "mongoose";
 
-const projectSchema = new mongoose.Schema<ProjectType>(
+const awardSchema = new mongoose.Schema<AwardType>(
   {
     title: {
       type: String,
@@ -12,10 +12,6 @@ const projectSchema = new mongoose.Schema<ProjectType>(
       unique: true,
     },
     category: {
-      type: String,
-      required: true,
-    },
-    shortDescription: {
       type: String,
       required: true,
     },
@@ -56,7 +52,7 @@ const projectSchema = new mongoose.Schema<ProjectType>(
   },
   { versionKey: false }
 );
-projectSchema.pre("save", async function (next) {
+awardSchema.pre("save", async function (next) {
   this.slug = this.title
     .toLowerCase()
     .replace(/\s+/g, "-")
@@ -85,5 +81,5 @@ projectSchema.pre("save", async function (next) {
   }
 });
 
-export const Project =
-  mongoose.models.Project || mongoose.model("Project", projectSchema);
+export const Award =
+  mongoose.models.Award || mongoose.model("Award", awardSchema);
