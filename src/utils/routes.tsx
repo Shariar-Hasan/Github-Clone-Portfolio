@@ -28,8 +28,8 @@ export const navbarRotues: RoutesType[] = [
     icon: <FaUserGraduate />,
   },
   {
-    title: "Achievements",
-    path: "/my-achievements",
+    title: "Awards",
+    path: "/my-awards",
     icon: <FaMedal />,
   },
   {

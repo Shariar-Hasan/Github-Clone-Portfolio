@@ -10,7 +10,7 @@ const Navbar = () => {
           <NavLink
             key={title + index}
             href={path}
-            activeClassName="after:bg-orange-400 font-medium"
+            activeClassName="after:bg-brand font-medium"
             nonActiveClassName=""
             className={
               "py-2 relative delayed after:absolute after:-bottom-1 after:left-0  after:h-[6px] overflow-hidden after:w-full after:rounded-t after:bg-opacity-50"

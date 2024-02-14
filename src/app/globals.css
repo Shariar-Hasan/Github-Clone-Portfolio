@@ -1,7 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@layer base {
+  option {
+    @apply px-2 mx-1 text-site bg-back delayed;
+  }
+}
 @layer components {
   /* back gorund clases */
   .bg-back {
@@ -28,10 +32,10 @@
     @apply text-gray-800 dark:text-gray-300;
   }
   .text-link {
-    @apply text-blue-700;
+    @apply text-green-700;
   }
   .text-link-underline {
-    @apply text-blue-700 hover:underline;
+    @apply text-green-700 hover:underline;
   }
   .text-dimmed {
     @apply text-gray-500 dark:text-gray-500;
@@ -47,7 +51,7 @@
     @apply border-green-500;
   }
   .border-dimmed {
-    @apply  border-gray-300 dark:border-gray-700;
+    @apply border-gray-300 dark:border-gray-700;
   }
   .divider-x {
     @apply w-full h-[0.5px] dark:bg-gray-700 bg-gray-300 my-2;
@@ -70,7 +74,6 @@
     @apply relative after:content-[attr(title)] after:overflow-hidden after:absolute after:top-0 after:text-nowrap  after:left-0 after:transition-all after:border-r-4 after:text-green-600 after:animate-[animText_5s_linear_infinite] after:origin-left after:z-[1];
   }
   .scrollbar-brand {
-    @apply scrollbar-thin 
-    scrollbar-track-gray-900 scrollbar-thumb-green-500;
+    @apply scrollbar-thin scrollbar-track-gray-900 scrollbar-thumb-green-500;
   }
 }

@@ -11,8 +11,8 @@ const BlogCard = ({ blog, index }: { blog: MediumBlog; index: number }) => {
   return (
     <RevealWrapper
       key={blog.guid}
-      delay={index * 0}
-      duration={500}
+      delay={index * 100}
+      duration={1000}
       distance="0px"
       reset={false}
     >

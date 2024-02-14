@@ -12,10 +12,12 @@ export const GET = async (
       `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${mediumUserName}`
     );
     const result = await res.json();
-    const blog = result.items.find((item: any) => toBlogSlug(item.guid) === id);
+    const blogs = result.items.filter(
+      (item: any) => toBlogSlug(item.guid) !== id
+    );
 
     return NextResponse.json({
-      data: blog,
+      data: blogs,
       success: true,
     });
   } catch (error) {

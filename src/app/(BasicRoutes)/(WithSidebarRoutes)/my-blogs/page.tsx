@@ -1,12 +1,17 @@
 import BlogSection from "@/components/Layers/BlogSection";
 import SubHeading from "@/components/SmallUI/SubHeading";
+import { metaDatas } from "@/utils/contants";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: metaDatas?.blogPage.title || "Blog Page",
+  description:
+    metaDatas?.blogPage.description ||
+    "Welcome to My Blog Page. Here you will find all my blogs. I will try to share my knowledge and experience through my blogs. Stay tuned for more blogs.",
+};
+
 const BlogPage = async () => {
-  // const res = await fetch(
-  //   `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${mediumUserName}`
-  // );
-  // console.log({ res });
-  // const data = await res.json();
-  // console.log({ data });
+
   return (
     <div>
       <SubHeading>My Blogs</SubHeading>

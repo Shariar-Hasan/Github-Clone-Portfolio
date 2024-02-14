@@ -16,7 +16,7 @@ const SideAboutMe = ({ userData }: { userData: GitHubUser }) => {
           alt={name}
           width={550}
           height={550}
-          className="max-w-[50px] md:max-w-[350px] w-full aspect-square rounded-full"
+          className="max-w-[50px] md:max-w-[350px] w-full aspect-square rounded-full md:border-4 md:border-brand"
           priority={true}
         />
         <div>

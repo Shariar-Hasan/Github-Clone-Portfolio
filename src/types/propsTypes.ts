@@ -53,6 +53,7 @@ export type NavlinkPropType = {
   className: string;
 };
 export type ProjectType = {
+  _id?: string;
   title: string;
   slug?: string;
   category: string;
@@ -67,3 +68,5 @@ export type ProjectType = {
   createdAt: number;
   updatedAt: number;
 };
+
+export type SearchParamsType = { [key: string]: string };

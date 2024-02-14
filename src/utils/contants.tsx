@@ -49,7 +49,7 @@ export const socialLinks: ContactIconType[] = [
   },
   {
     // linkedin
-    title: linkedInUserName,
+    title: "in/"+linkedInUserName,
     icon: <FaLinkedin />,
     url: `https://www.linkedin.com/in/${linkedInUserName}/`,
     media: "LinkedIn",
@@ -126,3 +126,39 @@ export const programmingIcon: ContactIconType[] = [
     url: "https://atcoder.jp/users/ethico",
   },
 ];
+
+// S E O // Meta Data section
+export const metaDatas: {
+  [x: string]: { title: string; description: string };
+} = {
+  contactMePage: {
+    title: "Contact Me",
+    description:
+      "Feel free to contact me via my mail or social networks. Contact me for any questions or to work together. I will try to get back to you as soon as possible.",
+  },
+  aboutMePage: {
+    title: "Hello from Shariar👋",
+    description:
+      "This is a Portfolio website for Developer Shariar Hasan. Feel free to visit the site and know more about me. I am a FrontEnd focused MERN Stack enthusiastic person with proficient knowledge of Web Devlopment technologies having 1+ year of learning experience and I am a fresh CSE graduate with B.Sc. Engineering from University of Chittagong, Bangladesh. I have quite a comfortable knowledge about Competitive Programming with DSA. I love to make complex code into readable and efficient clean code. I love to travel, cycling, swimming and playing soccer",
+  },
+  projectPage: {
+    title: "Projects",
+    description:
+      "These are some of my projects that I have done so far. I have done some projects using React, Next.js, Tailwind CSS, Node.js, Express.js, MongoDB, Firebase, and many more. I have also made some tools. Feel free to see all this projects",
+  },
+  blogPage: {
+    title: "Blogs",
+    description:
+      "Welcome to my blog page. These are some of my blogs that I have written so far. I have written some blogs about Web Development, programmign languages like javascript, pythons etc. and some other topics. Feel free to read all this blogs",
+  },
+  awardPage: {
+    title: "Awards",
+    description:
+      "These are some of my awards that I have achieved so far. Feel free to see all this Hall of Fame",
+  },
+  graduationPage: {
+    title: "Graduation",
+    description:
+      "This is my Graduation page. I have completed my B.Sc. Engineering from University of Chittagong, Bangladesh. Feel free to visit the page to know more about it.",
+  },
+};

@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { NextFont } from "next/dist/compiled/@next/font";
@@ -9,20 +8,16 @@ import HeadNavbar from "@/components/Layers/HeadNavbar";
 import Navbar from "@/components/Layers/Navbar";
 import { getUser } from "@/actions/GET";
 import { BASE_URL } from "@/utils/siteConstants";
+import { Metadata } from "next";
 
 const inter: NextFont = Inter({ subsets: ["latin"] });
-// const roboto: NextFont = Roboto({
-//   weight: ["100", "300", "400", "500", "700", "900"],
-//   subsets: ["latin"],
-// });
-// const notoSans: NextFont = Noto_Sans({
-//   weight: ["100", "300", "400", "500", "700", "900"],
-//   subsets: ["latin"],
-// });
+
 
 export const metadata: Metadata = {
-  title: "Portfolio | Shariar Hasan",
-  description: "This is a Github Portfolio website for Developer Shariar Hasan",
+  title: {
+    absolute: "Hello from Shariar 👋",
+    template: "%s | Shariar Hasan",
+  }
 };
 
 export default async function RootLayout({
