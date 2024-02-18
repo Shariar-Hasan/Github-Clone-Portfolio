@@ -3,7 +3,7 @@ import { sideBarRoutes } from "@/utils/routes";
 import Image from "next/image";
 import Link from "next/link";
 import React, { Dispatch, SetStateAction } from "react";
-import { FaHome, FaTimes } from "react-icons/fa";
+import {  FaTimes } from "react-icons/fa";
 type propType = {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -45,7 +45,7 @@ const SideNav = ({ isOpen, setIsOpen, avatar_url, login, name }: propType) => {
             <button
               onClick={() => setIsOpen(false)}
               className="text-dimmed p-2 bg-block cornered hover:text-site"
-            >
+            > <span className="sr-only">Side Menu Close Button</span>
               <FaTimes />
             </button>
           </div>

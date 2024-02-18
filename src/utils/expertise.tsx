@@ -2,6 +2,7 @@ export type ToolType = {
   title: string;
   icon: JSX.Element;
 };
+// icon link https://devicon.dev/ . search for new one if needed
 export const skills: ToolType[] = [
   {
     title: "Html",

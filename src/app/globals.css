@@ -1,37 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@layer base {
+  option {
+    @apply px-2 mx-1 text-site bg-back delayed;
+  }
+}
 @layer components {
   /* back gorund clases */
   .bg-back {
-    @apply bg-[#F6F8FA] dark:bg-[#0D1117];
+    @apply bg-[#F6F8FA] dark:bg-[#0D1117] duration-200;
   }
   .bg-front {
-    @apply bg-[#FFFFFF] dark:bg-[#010409];
+    @apply bg-[#FFFFFF] dark:bg-[#010409] duration-200;
   }
   .bg-block {
-    @apply bg-[#FFFFFF] dark:bg-[#161B22];
+    @apply bg-[#FFFFFF] dark:bg-[#161B22] duration-200;
   }
   .bg-brand {
-    @apply bg-green-500;
+    @apply bg-green-500 duration-200;
   }
   .bg-block-hard {
-    @apply bg-gray-300 dark:bg-gray-700;
+    @apply bg-gray-200 dark:bg-gray-800 duration-200;
   }
 
   /* text classes */
   .text-site {
-    @apply text-gray-900 dark:text-white;
+    @apply text-gray-900 dark:text-gray-300  selection:text-green-400 selection:bg-gray-100 dark:selection:bg-gray-900;
   }
   .text-site-dimmed {
     @apply text-gray-800 dark:text-gray-300;
   }
   .text-link {
-    @apply text-blue-700;
+    @apply text-green-700;
   }
   .text-link-underline {
-    @apply text-blue-700 hover:underline;
+    @apply text-green-700 hover:underline;
   }
   .text-dimmed {
     @apply text-gray-500 dark:text-gray-500;
@@ -43,8 +47,11 @@
   .cornered {
     @apply rounded;
   }
+  .border-brand {
+    @apply border-green-500;
+  }
   .border-dimmed {
-    @apply border border-gray-300 dark:border-gray-700;
+    @apply border-gray-300 dark:border-gray-700;
   }
   .divider-x {
     @apply w-full h-[0.5px] dark:bg-gray-700 bg-gray-300 my-2;
@@ -65,5 +72,8 @@
 @layer utilities {
   .animated_text {
     @apply relative after:content-[attr(title)] after:overflow-hidden after:absolute after:top-0 after:text-nowrap  after:left-0 after:transition-all after:border-r-4 after:text-green-600 after:animate-[animText_5s_linear_infinite] after:origin-left after:z-[1];
+  }
+  .scrollbar-brand {
+    @apply scrollbar-thin scrollbar-track-gray-900 scrollbar-thumb-green-500;
   }
 }

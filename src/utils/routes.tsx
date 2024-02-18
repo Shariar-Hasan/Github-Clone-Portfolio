@@ -3,7 +3,7 @@ import { FaBlog, FaMedal, FaStar, FaStickyNote, FaUserGraduate } from "react-ico
 import { GrProjects } from "react-icons/gr";
 import { IoBookOutline } from "react-icons/io5";
 import { RiContactsBookLine, RiGitRepositoryFill } from "react-icons/ri";
-import { githubUserName } from "./contants";
+import { githubUserName } from "./userInfoContants";
 import { FiUserPlus, FiUsers } from "react-icons/fi";
 
 export const navbarRotues: RoutesType[] = [
@@ -14,7 +14,7 @@ export const navbarRotues: RoutesType[] = [
   },
   {
     title: "Projects",
-    path: "/my-projects",
+    path: "/my-projects?category=All&sort=desc",
     icon: <GrProjects />,
   },
   {
@@ -28,8 +28,8 @@ export const navbarRotues: RoutesType[] = [
     icon: <FaUserGraduate />,
   },
   {
-    title: "Achievements",
-    path: "/my-achievements",
+    title: "Awards",
+    path: "/my-awards?category=All&sort=desc",
     icon: <FaMedal />,
   },
   {

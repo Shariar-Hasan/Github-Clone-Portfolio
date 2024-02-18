@@ -10,7 +10,8 @@ export const theme = createSlice({
   initialState,
   reducers: {
     toggleDark: (state) => {
-      document.body.classList.toggle("dark");
+      // document.body.classList.toggle("dark");
+      document.getElementsByTagName("html")[0].classList.toggle("dark");
       return {
         ...state,
         isDark: !state.isDark,

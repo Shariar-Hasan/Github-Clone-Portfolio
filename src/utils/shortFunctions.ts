@@ -14,3 +14,17 @@ export const linkedinUrl = (userName: string): string => {
 export const twitterUrl = (userName: string): string => {
   return `https://twitter.com/${userName}`;
 };
+
+export const downloadCV = () => {
+  window.open(
+    "https://drive.google.com/file/d/1DQzDIEbdVAeag36J271gUwaesAFqYPWE/view?usp=sharing",
+    "_blank"
+  );
+};
+
+export const isIncluded = (string: string = "", pattern: string = "") => {
+  return string.toLowerCase().includes(pattern.toLowerCase());
+};
+export const toBlogSlug = (string: string = "") => {
+  return string.replace("https://medium.com/p/", "");
+};

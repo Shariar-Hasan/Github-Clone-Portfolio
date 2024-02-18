@@ -1,5 +1,3 @@
-import { HtmlHTMLAttributes } from "react";
-
 export type ChildrenType = { children: React.ReactNode };
 export type GitHubUser = {
   login: string;
@@ -35,11 +33,56 @@ export type GitHubUser = {
   created_at: string;
   updated_at: string;
 };
-
+export type MediumBlog = {
+  title: string;
+  pubDate: string;
+  link: string;
+  guid: string;
+  author: string;
+  thumbnail: string;
+  description: string;
+  content: string;
+  enclosure: object;
+  categories: string[];
+};
 export type NavlinkPropType = {
   children: React.ReactNode;
   href: string;
   activeClassName: string;
   nonActiveClassName: string;
   className: string;
+};
+export type AwardType = {
+  _id?: string;
+  title: string;
+  slug?: string;
+  category: string;
+  description: string;
+  thumbnail: string;
+  links: {
+    title: string;
+    url: string;
+  }[];
+  tags: string[];
+  createdAt: number;
+  updatedAt: number;
+};
+export type ProjectType = AwardType & {
+  shortDescription: string;
+};
+
+export type SearchParamsType = { [key: string]: string };
+
+export type SelectTagListType = { title: string; value: string };
+
+export type EducationInfoType = {
+  courseTitle: string;
+  shortCourseTitle?: string;
+  startingYear: number;
+  graduationYear: number;
+  description?: string;
+  icon?: JSX.Element;
+  result?: string;
+  location?: string;
+  institution: string;
 };

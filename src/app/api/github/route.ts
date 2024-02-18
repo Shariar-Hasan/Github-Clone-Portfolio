@@ -1,4 +1,4 @@
-import { githubUserName } from "@/utils/contants";
+import { githubUserName } from "@/utils/userInfoContants";
 import { NextResponse } from "next/server";
 
 export const GET = async (): Promise<NextResponse> => {

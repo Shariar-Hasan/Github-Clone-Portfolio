@@ -1,7 +1,6 @@
 
 import { GitHubUser } from "@/types/propsTypes";
 import Image from "next/image";
-import { SetStateAction, useState } from "react";
 import SideNav from "../Layers/SideNav";
 
 const AvaterButton = ({
@@ -17,6 +16,7 @@ const AvaterButton = ({
   return (
     <div className="flex items-center">
       <button onClick={() => setIsSidebarOpen(true)}>
+      <span className="sr-only">Side Menu Open Button with Avater Icon</span>
         <Image
           width={200}
           height={200}

@@ -17,6 +17,13 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  variants: {
+    scrollbar: ["dark"],
+  },
+
+  plugins: [
+    require("tailwind-scrollbar")({ nocompatible: true }),
+    require("@tailwindcss/typography"),
+  ],
 };
 export default config;

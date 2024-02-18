@@ -6,6 +6,8 @@ import { ChildrenType } from "@/types/propsTypes";
 import { getUser } from "@/actions/GET";
 import StoreProvider from "./StoreProvider";
 import { BASE_URL } from "@/utils/siteConstants";
+import ScrollToTop from "../SmallUI/ScrollToTop";
+import { Toaster } from "react-hot-toast";
 
 const MainLayout = async ({ children }: ChildrenType) => {
   if (!BASE_URL) {
@@ -14,16 +16,16 @@ const MainLayout = async ({ children }: ChildrenType) => {
   const { data: userData } = await getUser();
   return (
     <StoreProvider>
+      <ScrollToTop />
+      <Toaster position="bottom-left" reverseOrder={false} />
       <nav>
         <HeadNavbar userData={userData} />
         <Navbar />
       </nav>
-      <div className="">
-        <main className="max-w-7xl md:mx-auto w-full grid md:grid-cols-4 grid-cols-1 md:gap-6 mx-4">
-          <SideAboutMe userData={userData} />
-          <div className="col-span-1 md:col-span-3 my-10">{children}</div>
-        </main>
-      </div>
+      <main className="max-w-7xl md:mx-auto w-full grid md:grid-cols-4 grid-cols-1 md:gap-6">
+        <SideAboutMe userData={userData} />
+        <div className="col-span-1 md:col-span-3 my-10 mx-2">{children}</div>
+      </main>
     </StoreProvider>
   );
 };

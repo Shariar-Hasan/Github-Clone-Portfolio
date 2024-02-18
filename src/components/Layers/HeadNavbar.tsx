@@ -1,5 +1,5 @@
 "use client";
-import { githubUserName } from "@/utils/contants";
+import { githubUserName } from "@/utils/userInfoContants";
 import { githubUrl } from "@/utils/shortFunctions";
 import React, { useState } from "react";
 import { FaBars, FaGithub } from "react-icons/fa";
@@ -19,6 +19,7 @@ const HeadNavbar = ({ userData }: { userData: GitHubUser }) => {
             className="border p-2 cornered clicked"
             onClick={() => setIsSidebarOpen(true)}
           >
+            <span className="sr-only">Side Menu Open Button</span>
             <FaBars />
           </button>
           <a
@@ -28,7 +29,7 @@ const HeadNavbar = ({ userData }: { userData: GitHubUser }) => {
             className="flex gap-x-3 items-center "
           >
             <FaGithub className="text-3xl" />
-            <h5 className="text-sm font-semibold hover-route-bg">
+            <h5 className="text-sm font-semibold hover-route-bg hidden md:inline-block">
               Shariar Hasan
             </h5>
           </a>
