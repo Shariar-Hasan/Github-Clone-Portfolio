@@ -1,6 +1,10 @@
 {
   "rules": {
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "max-statements-per-line": "off",
+    "comma-dangle": ["error", "always-multiline"]
   },
-  "extends": "next/core-web-vitals"
+  // "extends": "next/core-web-vitals"
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "plugins": ["prettier"]
 }
