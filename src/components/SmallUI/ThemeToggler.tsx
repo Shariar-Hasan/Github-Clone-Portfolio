@@ -9,7 +9,11 @@ const ThemeToggler = () => {
   const dispatch = useAppDispatch();
   return (
     <div>
-      <button className="aspect-square border border-dimmed p-1.5 text-lg border-dimmed cornered text-dimmed " onClick={() => dispatch(toggleDark())}>
+      <button
+        className="aspect-square border border-dimmed p-1.5 text-lg border-dimmed cornered text-dimmed "
+        onClick={() => dispatch(toggleDark())}
+      >
+        <span className="sr-only">Switch between dark and light mode</span>
         {isDark ? <FaSun /> : <FaMoon />}
       </button>
     </div>

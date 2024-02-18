@@ -8,7 +8,7 @@ type PropsType = {
   defaultValue: string;
 };
 const Select = ({ list = [], label, setValue, defaultValue }: PropsType) => {
-  const [selectValue, setSelectValue] = useState("");
+  const [selectValue, setSelectValue] = useState(defaultValue || list[0]?.title);
   const [screenExceeded, setScreenExceeded] = useState(true);
   const listRef = useRef<any>(null);
   // csutom fution to show the pop up in certein accurate place
@@ -20,14 +20,6 @@ const Select = ({ list = [], label, setValue, defaultValue }: PropsType) => {
     const top = listRef?.current?.getBoundingClientRect().top;
     const bottom = listRef?.current?.getBoundingClientRect().bottom;
     const selectTagSize = Math.abs(top - bottom);
-    // console.log({
-    //   selectTagTopDistance,
-    //   selectTagBottomDistance,
-    //   selectTagSize,
-    //   top,
-    //   bottom,
-    //   listRef,
-    // });
     if (selectTagBottomDistance > selectTagSize) {
       setScreenExceeded(true);
     } else if (selectTagTopDistance > selectTagSize) {
@@ -53,7 +45,7 @@ const Select = ({ list = [], label, setValue, defaultValue }: PropsType) => {
       <button
         className="py-2.5 px-3 w-full md:text-sm text-site bg-transparent border border-dimmed  focus:border-brand focus:outline-none focus:ring-0 peer flex items-center justify-between cornered font-semibold"
         onFocus={handleFocus}
-      >
+      ><span className="sr-only">Button for select any value from the list </span>
         {selectValue}
       </button>
       {list?.length > 0 && (

@@ -1,8 +1,8 @@
 import ContactMeForm from "@/components/Layers/ContactMeForm";
-import DoubleDivider from "@/components/SmallUI/DoubleDivider";
-import SubHeading from "@/components/SmallUI/SubHeading";
-import ContactLinkCard from "@/components/SmallUI/cards/ContactLinkCard";
-import { metaDatas, programmingIcon, socialLinks } from "@/utils/contants";
+import ContactOptions from "@/components/Layers/ContactOptions";
+import {
+  metaDatas,
+} from "@/utils/userInfoContants";
 import { Metadata } from "next";
 import React from "react";
 
@@ -15,15 +15,9 @@ export const metadata: Metadata = {
 const ContactMePage = () => {
   return (
     <div className="px-5">
-      <SubHeading>Contact Me</SubHeading>
-      <ContactMeForm />
-      <DoubleDivider>
-        <span className="italic text-xl">Quick Links</span>
-      </DoubleDivider>
-      <div className="flex items-center flex-wrap gap-x-3 justify-center">
-        {[...socialLinks, ...programmingIcon]?.map((item, index) => (
-          <ContactLinkCard key={index} item={item} />
-        ))}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-10">
+        <ContactOptions />
+        <ContactMeForm />
       </div>
     </div>
   );

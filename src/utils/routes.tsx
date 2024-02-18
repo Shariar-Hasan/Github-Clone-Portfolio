@@ -3,7 +3,7 @@ import { FaBlog, FaMedal, FaStar, FaStickyNote, FaUserGraduate } from "react-ico
 import { GrProjects } from "react-icons/gr";
 import { IoBookOutline } from "react-icons/io5";
 import { RiContactsBookLine, RiGitRepositoryFill } from "react-icons/ri";
-import { githubUserName } from "./contants";
+import { githubUserName } from "./userInfoContants";
 import { FiUserPlus, FiUsers } from "react-icons/fi";
 
 export const navbarRotues: RoutesType[] = [

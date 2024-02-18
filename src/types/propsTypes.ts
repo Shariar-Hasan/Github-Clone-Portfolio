@@ -74,3 +74,15 @@ export type ProjectType = AwardType & {
 export type SearchParamsType = { [key: string]: string };
 
 export type SelectTagListType = { title: string; value: string };
+
+export type EducationInfoType = {
+  courseTitle: string;
+  shortCourseTitle?: string;
+  startingYear: number;
+  graduationYear: number;
+  description?: string;
+  icon?: JSX.Element;
+  result?: string;
+  location?: string;
+  institution: string;
+};

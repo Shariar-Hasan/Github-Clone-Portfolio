@@ -1,5 +1,5 @@
 import { GitHubUser } from "@/types/propsTypes";
-import { CVLink, programmingIcon, socialLinks } from "@/utils/contants";
+import { CVLink, programmingIcon, socialLinks } from "@/utils/userInfoContants";
 import { downloadCV } from "@/utils/shortFunctions";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,6 +27,7 @@ const SideAboutMe = ({ userData }: { userData: GitHubUser }) => {
 
       <p className="text-sm">{bio}</p>
       <Link href={CVLink} target="_blank" rel="noreferrer noopenner">
+        <span className="sr-only">Resume Download Button</span>
         <button className="w-full bg-block-hard cornered my-3 py-1 border border-gray-300/50 active:scale-[.99] text-sm">
           Download Resume
         </button>
@@ -56,6 +57,7 @@ const SideAboutMe = ({ userData }: { userData: GitHubUser }) => {
       <ul className="flex flex-col gap-y-0.5 text- sm">
         {socialLinks?.map(({ title, media, url, icon }, index) => (
           <li key={title + index} className="flex items-center gap-x-1">
+            <span className="sr-only">{media} link </span>
             <span>{icon}</span>
             <a
               href={url}

@@ -1,4 +1,4 @@
-import { basicInfo } from "@/utils/contants";
+import { basicInfo } from "@/utils/userInfoContants";
 import { type NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 // Nodemailer setup (use your email service provider's SMTP settings)

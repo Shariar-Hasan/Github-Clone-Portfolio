@@ -1,4 +1,4 @@
-import { mediumUserName } from "@/utils/contants";
+import { mediumUserName } from "@/utils/userInfoContants";
 import { toBlogSlug } from "@/utils/shortFunctions";
 import { type NextRequest, NextResponse } from "next/server";
 

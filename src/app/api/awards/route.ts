@@ -5,10 +5,9 @@ import { Award } from "./model";
 export const GET = async (req: NextRequest): Promise<NextResponse> => {
   const queryParams = req.nextUrl.searchParams;
   const dbQueryObject = {
-    category:
-      queryParams.get("category") !== "All"
-        ? queryParams.get("category")
-        : { $exists: true },
+    category: !queryParams.get("category")?.includes("All")
+      ? queryParams.get("category")
+      : { $exists: true },
   };
   // console.log({ queryParams, dbQueryObject });
   console.log("workign");

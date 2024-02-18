@@ -11,7 +11,7 @@ const ShowProjectsSection = async ({
   return (
     <>
       {projects?.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-3">
           {projects?.map((project: ProjectType, i: number) => {
             return (
               <ProjectCard key={project._id} index={i} project={project} />
@@ -19,7 +19,7 @@ const ShowProjectsSection = async ({
           })}
         </div>
       ) : (
-        <NoItemAvailable text="No Porject Found" />
+        <NoItemAvailable text="No Project Found" />
       )}
     </>
   );

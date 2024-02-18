@@ -5,10 +5,9 @@ import { Project } from "./modal";
 export const GET = async (req: NextRequest): Promise<NextResponse> => {
   const queryParams = req.nextUrl.searchParams;
   const dbQueryObject = {
-    category:
-      queryParams.get("category") !== "All"
-        ? queryParams.get("category")
-        : { $exists: true },
+    category: !queryParams.get("category")?.includes("All")
+      ? queryParams.get("category")
+      : { $exists: true },
   };
   console.log({ queryParams, dbQueryObject });
   try {
@@ -18,7 +17,7 @@ export const GET = async (req: NextRequest): Promise<NextResponse> => {
     });
     return NextResponse.json({ data: projects, success: true });
   } catch (error: any) {
-    return NextResponse.json({ data: error.message, success: true });
+    return NextResponse.json({ data: error.message, success: false });
   }
 };
 export const POST = async (req: NextRequest): Promise<NextResponse> => {

@@ -4,6 +4,7 @@ import { AwardType } from "@/types/propsTypes";
 import AwardCard from "../SmallUI/cards/AwardCard";
 
 const AwardShowSection = async ({ awards }: { awards: AwardType[] }) => {
+  
   return (
     <>
       {awards?.length > 0 ? (

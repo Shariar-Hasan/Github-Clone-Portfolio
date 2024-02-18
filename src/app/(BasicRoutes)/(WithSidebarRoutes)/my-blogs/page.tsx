@@ -1,6 +1,6 @@
 import BlogSection from "@/components/Layers/BlogSection";
 import SubHeading from "@/components/SmallUI/SubHeading";
-import { metaDatas } from "@/utils/contants";
+import { metaDatas } from "@/utils/userInfoContants";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

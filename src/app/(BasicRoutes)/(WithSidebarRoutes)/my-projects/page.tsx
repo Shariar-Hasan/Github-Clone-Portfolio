@@ -3,7 +3,7 @@ import FilterSection from "@/components/Layers/FilterSection";
 import ShowProjectsSection from "@/components/Layers/ShowProjectsSection";
 import NoItemAvailable from "@/components/SmallUI/NoItemAvailable";
 import {  SearchParamsType } from "@/types/propsTypes";
-import { metaDatas } from "@/utils/contants";
+import { metaDatas } from "@/utils/userInfoContants";
 import { BASE_URL } from "@/utils/siteConstants";
 import { Metadata } from "next";
 import React from "react";
@@ -20,6 +20,7 @@ const ProjectPage = async ({
   searchParams: SearchParamsType;
 }) => {
   const { data, success } = await getProjects(searchParams);
+  
   return (
     <div>
       <FilterSection categoryFetchString={`${BASE_URL}/api/projects/categories`}/>

@@ -1,4 +1,4 @@
-import { ContactForm } from "@/app/(BasicRoutes)/contact-me/page";
+import { ContactForm } from "./../components/Layers/ContactMeForm";
 import { BASE_URL } from "@/utils/siteConstants";
 const options = {
   method: "POST",

@@ -1,4 +1,5 @@
 import { AboutMeType, ContactIconType } from "@/types/constantsTypes";
+import { EducationInfoType } from "@/types/propsTypes";
 import { BsMedium } from "react-icons/bs";
 import { FaGithubSquare, FaHackerrank, FaLinkedin } from "react-icons/fa";
 import { FaSquareFacebook, FaXTwitter } from "react-icons/fa6";
@@ -49,7 +50,7 @@ export const socialLinks: ContactIconType[] = [
   },
   {
     // linkedin
-    title: "in/"+linkedInUserName,
+    title: "in/" + linkedInUserName,
     icon: <FaLinkedin />,
     url: `https://www.linkedin.com/in/${linkedInUserName}/`,
     media: "LinkedIn",
@@ -94,6 +95,7 @@ export const basicInfo: AboutMeType = {
   ),
 };
 
+// all the competitive or dsa programming related icons with titles
 export const programmingIcon: ContactIconType[] = [
   {
     title: "CodeForces",
@@ -162,3 +164,44 @@ export const metaDatas: {
       "This is my Graduation page. I have completed my B.Sc. Engineering from University of Chittagong, Bangladesh. Feel free to visit the page to know more about it.",
   },
 };
+
+// educational info
+
+export const educationalInfo: EducationInfoType[] = [
+  {
+    courseTitle: "B.Sc. in Computer Science and Engineering",
+    shortCourseTitle: "B.Sc",
+    institution: "University of Chittagong",
+    location: "Chittagong, Bangladesh",
+    startingYear: 2018,
+    graduationYear: 2023,
+    description:
+      "its a long journey of my educational life in the University of Chittagong and tried to make good friends",
+    icon: <span>fasf</span>,
+    result: "CGPA 3.14",
+  },
+  {
+    courseTitle: "Higher Secondary Certificate",
+    shortCourseTitle : "HSC",
+    institution: "Feni Gov't College",
+    location: "Feni, Bangladesh",
+    startingYear: 2015,
+    graduationYear: 2017,
+    description:
+      "its a short journey of my educational life in the Feni Gov't college and i tried to use time best use of time in this short period",
+    icon: <span>fasf</span>,
+    result: "GPA 4.58",
+  },
+  {
+    courseTitle: "Secondary School Certificate",
+    shortCourseTitle : "SSC",
+    institution: "Feni Gov't Pilot High School",
+    location: "Feni, Bangladesh",
+    startingYear: 2010,
+    graduationYear: 2015,
+    description:
+      "its a short journey of my educational life in the Feni Gov't Pilot High School and i tried to use time best use of time in this short period",
+    icon: <span>fasf</span>,
+    result: "GPA 5.00",
+  },
+];

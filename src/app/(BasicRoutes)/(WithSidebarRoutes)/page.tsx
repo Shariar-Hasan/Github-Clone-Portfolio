@@ -1,5 +1,5 @@
 import ExpertiseSection from "@/components/Layers/ExpertiseSection";
-import { basicInfo, metaDatas } from "@/utils/contants";
+import { basicInfo, metaDatas } from "@/utils/userInfoContants";
 import { OS, skills, tools } from "@/utils/expertise";
 import { Metadata } from "next";
 
@@ -17,7 +17,7 @@ export default function Home() {
       <h2 className="text-xl md:text-4xl mb-2">Hi 👋, myself </h2>
       <h1
         title={basicInfo?.name}
-        className="animated_text tracking-widest md:text-6xl text-3xl font-semibold my-3"
+        className="md:animated_text text-brand md:text-inherit tracking-widest md:text-6xl text-3xl font-semibold my-3"
       >
         {basicInfo?.name}
       </h1>

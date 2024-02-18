@@ -30,7 +30,7 @@ const AwardCard = ({ award, index }: { award: AwardType; index: number }) => {
             />
           </div>
           <div className="absolute bg-black/70 w-full h-full px-1 py-2 top-0 left-0 flex  items-center justify-center group-hover:opacity-100 group-hover:visible opacity-0 invisible delayed overflow-y-auto scrollbar-none text-white">
-            <span className="md:text-xl text-lg translate-y-[100px] group-hover:translate-y-0 duration-[0.5s] my-1 hover:text-brand tracking-widest">
+            <span className="md:text-xl text-lg translate-x-[100px] group-hover:translate-x-0 duration-[0.5s] my-1 hover:text-brand tracking-widest">
               View Awards
             </span>
           </div>

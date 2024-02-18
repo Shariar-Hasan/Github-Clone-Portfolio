@@ -4,6 +4,7 @@ import React from "react";
 import { ProjectType } from "@/types/propsTypes";
 import Link from "next/link";
 import { RevealWrapper } from "next-reveal";
+import moment from "moment";
 const ProjectCard = ({
   project,
   index,
@@ -11,7 +12,8 @@ const ProjectCard = ({
   project: ProjectType;
   index: number;
 }) => {
-  const { title, thumbnail, slug } = project;
+  const { title, thumbnail, slug, updatedAt } = project;
+
   return (
     <RevealWrapper
       delay={index * 50}
@@ -24,7 +26,7 @@ const ProjectCard = ({
       className={"h-full"}
     >
       <Link href={`/my-projects/${slug}`}>
-        <div className="border border-dimmed cornered relative group overflow-hidden hover:border-brand even:hover:skew-y-1 hover:-skew-y-1 delayed hover:animate-pulse peer">
+        <div className="border border-dimmed cornered relative group overflow-hidden hover:border-brand even:hover:skew-y-1 hover:-skew-y-1 delayed hover:animat e-pulse peer">
           <div className="">
             <Image
               width={500}
@@ -34,15 +36,18 @@ const ProjectCard = ({
               alt={title}
             />
           </div>
-          <div className="absolute bg-black/70 dark:bg-white/10 w-full h-full px-1 py-2 top-0 left-0 flex  items-center justify-center group-hover:opacity-100 group-hover:visible opacity-0 invisible delayed overflow-y-auto scrollbar-none text-white">
-            <span className="md:text-xl text-lg translate-y-[100px] group-hover:translate-y-0 duration-[0.5s] my-1 hover:text-brand tracking-widest">
-              View Project
-            </span>
+          <div className="absolute bg-gradient-to-b from-transparent to-black/100 w-full h-full px-1 py-2 top-0 left-0 flex  items-start justify-end flex-col group-hover:opacity-100 group-hover:visible opacity-0 invisible delayed overflow-y-auto scrollbar-none text-white">
+            <h5 className="translate-y-28 group-hover:translate-y-0 delayed tracking-wide text-sm px-2 text-gray-300">
+              {title}
+            </h5>
+            <p className="translate-y-28 group-hover:translate-y-0 delayed text-dimmed text-xs px-2 delay-100">
+              Last updated : {moment(updatedAt).format("MMM Do, YY")}
+            </p>
           </div>
         </div>
-        <h3 className="peer-hover:translate-y-[-13px] peer-hover:opacity-0 text-center text-sm hover:text-brand tracking-wider pt-2 delayed z-[-1]">
+        {/* <h3 className="peer-hover:translate-y-[-13px] peer-hover:opacity-0 text-center text-sm hover:text-brand tracking-wider pt-2 delayed z-[-1]">
           {title}
-        </h3>
+        </h3> */}
       </Link>
     </RevealWrapper>
   );

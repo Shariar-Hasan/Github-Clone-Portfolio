@@ -1,5 +1,5 @@
 import { MediumBlog } from "@/types/propsTypes";
-import React from "react";
+import React, { useEffect } from "react";
 import { getSingleBlog } from "@/actions/GET";
 import NoItemAvailable from "@/components/SmallUI/NoItemAvailable";
 
@@ -23,13 +23,13 @@ const SingleBlog = async ({ slug }: { slug: string }) => {
     data;
   return (
     <div className="w-full px-2 py-4">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center sticky top-0 bg-back z-10">
         <BackButton />
         <a
           href={link}
           target="_blank"
           rel="noopenner noreferrer"
-          className="flex items-center gap-1 text-sm md:text-lg rounded-md px-3 py-1 font-medium hover:bg-brand delayed"
+          className="flex items-center gap-1 text-sm md:text-lg rounded-md px-3 py-1 font-medium hover:bg-brand hover:text-white delayed"
         >
           Read this on medium <PiMediumLogoFill />
         </a>

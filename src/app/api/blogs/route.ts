@@ -1,4 +1,4 @@
-import { mediumUserName } from "@/utils/contants";
+import { mediumUserName } from "@/utils/userInfoContants";
 import { NextResponse, type NextRequest } from "next/server";
 
 export const GET = async (req: NextRequest): Promise<NextResponse> => {

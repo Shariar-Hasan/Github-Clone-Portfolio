@@ -33,7 +33,7 @@ const FilterSection = ({
         const totalData = data.data.reduce((acc, { count }) => acc + count, 0);
         categoryData.unshift({ category: "All", count: totalData });
         setCategoryList(categoryData);
-        console.log("Re Fetched categorylist");
+        // console.log("Re Fetched categorylist");
       });
   }, []);
 
@@ -51,7 +51,7 @@ const FilterSection = ({
 
   return (
     <div>
-      <div className="flex md:flex-row flex-col items-center justify-end gap-2">
+      <div className="flex md:flex-row flex-col items-center justify-end gap-2 my-5">
         <div className="min-w-[150px]">
           <Select
             defaultValue="All"
@@ -73,7 +73,7 @@ const FilterSection = ({
           />
         </div>
       </div>
-      <div className="divider-x" />
+      {/* <div className="divider-x" /> */}
     </div>
   );
 };

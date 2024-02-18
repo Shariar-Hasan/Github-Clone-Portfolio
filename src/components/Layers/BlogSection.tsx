@@ -3,7 +3,7 @@ import { MediumBlog } from "@/types/propsTypes";
 import { BASE_URL } from "@/utils/siteConstants";
 import NoItemAvailable from "../SmallUI/NoItemAvailable";
 import { mediumUrl } from "@/utils/shortFunctions";
-import { mediumUserName } from "@/utils/contants";
+import { mediumUserName } from "@/utils/userInfoContants";
 
 const BlogSection = async () => {
   const response = await fetch(`${BASE_URL}/api/blogs`);

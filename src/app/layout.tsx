@@ -9,15 +9,14 @@ import Navbar from "@/components/Layers/Navbar";
 import { getUser } from "@/actions/GET";
 import { BASE_URL } from "@/utils/siteConstants";
 import { Metadata } from "next";
-
+import NextTopLoader from "nextjs-toploader";
 const inter: NextFont = Inter({ subsets: ["latin"] });
-
 
 export const metadata: Metadata = {
   title: {
     absolute: "Hello from Shariar 👋",
     template: "%s | Shariar Hasan",
-  }
+  },
 };
 
 export default async function RootLayout({
@@ -43,6 +42,7 @@ export default async function RootLayout({
       ${inter.className}
       delayed bg-back`}
       >
+        <NextTopLoader  height={2} color="#00ff5d" showSpinner={false} easing="ease-in-out" />
         <div className="bg-back text-site">
           <StoreProvider>
             <ScrollToTop />

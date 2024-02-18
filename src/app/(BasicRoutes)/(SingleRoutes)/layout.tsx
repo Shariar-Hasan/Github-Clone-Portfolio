@@ -1,4 +1,3 @@
-import React from "react";
 
 const SingleRouteLayout = ({ children }: { children: React.ReactNode }) => {
   return (
