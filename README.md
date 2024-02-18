@@ -4,47 +4,29 @@
 
 ```typescript
 class About extends Me {
-  public name: string;
-  public title: string[];
-  public location: string;
-  public email: string;
+  public name: string
+  public title: string[]
+  public location: string
+  public email: string
 
   constructor() {
-    super();
-    this.name = "Shariar Hasan";
-    this.title = ["MERN Stack Developer", "JavaScript Enthusiast"];
-    this.location = "Bangladesh";
-    this.email = "shariar.hasan.1523@gmail.com";
+    super()
+    this.name = 'Shariar Hasan'
+    this.title = ['MERN Stack Developer', 'JavaScript Enthusiast']
+    this.location = 'Bangladesh'
+    this.email = 'shariar.hasan.1523@gmail.com'
   }
-  
+
   get skills(): string[] {
     return [
-      "Html",
-      "CSS",
-      "Tailwind CSS",
-      "Bootstrap",
-      "Sass/Scss",
-      "Javascript",
-      "TypeScript",
-      "React JS",
-      "Next.js",
-      "Express JS",
-      "Node Js",
-      "C",
-      "C++",
-      "Python",
-      "MongoDB",
-      "Firebase",
-      "Material UI",
-      "Mongoose",
-      "Redux Toolkit",
-    ];
+      'Html', 'CSS', 'Tailwind CSS', 'Bootstrap', 'Sass/Scss', 'Javascript', 'TypeScript', 'React JS', 'Next.js', 'Express JS', 'Node Js', 'C',  'C++', 'Python', 'MongoDB', 'Firebase', 'Material UI', 'Mongoose', 'Redux Toolkit',
+    ]
   }
   get graduation(): string {
-    return "B.Sc. Engineering in CSE from University of Chittagong";
+    return 'B.Sc. Engineering in CSE from University of Chittagong'
   }
   get contactMe(): string {
-    return "shahriar.hasan.1523@gmail.com";
+    return 'shahriar.hasan.1523@gmail.com'
   }
 }
 ```
@@ -71,6 +53,7 @@ class About extends Me {
 <!-- Stat Section -->
 
 ### Github Stats
+
 ![Shariar's GitHub Summery](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Shariar-Hasan&theme=transparent)
 ![Shariar's Top Used Langs](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Shariar-Hasan&theme=transparent)
 ![Top Lang By Commit](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Shariar-Hasan&theme=transparent)
@@ -79,9 +62,8 @@ class About extends Me {
 
 [![Shariar's GitHub Streak](https://streak-stats.demolab.com?user=Shariar-Hasan&theme=dark&hide_border=true&border_radius=1&mode=weekly&card_width=1200)](https://git.io/streak-stats)
 
- 
-
 ### languages
+
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=html,css,javascript,typescript,react,next,solidjs,nodejs,express,tailwind,bootstrap,scss,c,cpp,python,materialui&perline=8" />
@@ -89,6 +71,7 @@ class About extends Me {
 </p>
 
 ### Tools
+
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=git,vscode,firebase,mongodb,netlify,heroku" />
