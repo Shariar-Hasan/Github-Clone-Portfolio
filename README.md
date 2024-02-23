@@ -19,7 +19,25 @@ class About extends Me {
 
   get skills(): string[] {
     return [
-      'Html', 'CSS', 'Tailwind CSS', 'Bootstrap', 'Sass/Scss', 'Javascript', 'TypeScript', 'React JS', 'Next.js', 'Express JS', 'Node Js', 'C',  'C++', 'Python', 'MongoDB', 'Firebase', 'Material UI', 'Mongoose', 'Redux Toolkit',
+      'Html',
+      'CSS',
+      'Tailwind CSS',
+      'Bootstrap',
+      'Sass/Scss',
+      'Javascript',
+      'TypeScript',
+      'React JS',
+      'Next.js',
+      'Express JS',
+      'Node Js',
+      'C',
+      'C++',
+      'Python',
+      'MongoDB',
+      'Firebase',
+      'Material UI',
+      'Mongoose',
+      'Redux Toolkit',
     ]
   }
   get graduation(): string {

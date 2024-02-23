@@ -1,5 +1,5 @@
-import { ProjectType } from "@/types/propsTypes";
-import mongoose from "mongoose";
+import { ProjectType } from '@/types/propsTypes'
+import mongoose from 'mongoose'
 
 const projectSchema = new mongoose.Schema<ProjectType>(
   {
@@ -55,35 +55,35 @@ const projectSchema = new mongoose.Schema<ProjectType>(
     },
   },
   { versionKey: false }
-);
-projectSchema.pre("save", async function (next) {
+)
+projectSchema.pre('save', async function (next) {
   this.slug = this.title
     .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w-]+/g, "");
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]+/g, '')
   try {
-    const constructorThis: any = this.constructor;
+    const constructorThis: any = this.constructor
     const documentCount = await constructorThis.countDocuments({
       slug: this.slug,
-    });
+    })
     // check document exits or not
     if (documentCount > 0) {
-      this.slug = `${this.slug}-${Date.now()}`;
-      this.updatedAt = Date.now();
+      this.slug = `${this.slug}-${Date.now()}`
+      this.updatedAt = Date.now()
     }
-    console.log(
-      "New slug created for " +
-        this.title +
-        " is " +
-        this.slug +
-        " and document count is " +
-        documentCount
-    );
-    next();
+    // console.log(
+    //   "New slug created for " +
+    //     this.title +
+    //     " is " +
+    //     this.slug +
+    //     " and document count is " +
+    //     documentCount
+    // );
+    next()
   } catch (err: any) {
-    next(err);
+    next(err)
   }
-});
+})
 
 export const Project =
-  mongoose.models.Project || mongoose.model("Project", projectSchema);
+  mongoose.models.Project || mongoose.model('Project', projectSchema)
