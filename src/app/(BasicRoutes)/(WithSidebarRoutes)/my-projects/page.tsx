@@ -20,7 +20,7 @@ const ProjectPage = async ({
   searchParams: SearchParamsType
 }) => {
   if (!BASE_URL) {
-    return<div>BASE URL not found</div>
+    return <div>BASE URL not found</div>
   }
   const { data, success } = await getProjects(searchParams)
 
@@ -32,7 +32,7 @@ const ProjectPage = async ({
       {success ? (
         <ShowProjectsSection projects={data} />
       ) : (
-        <NoItemAvailable text="No Project Found" />
+        <NoItemAvailable text={data?.message} />
       )}
     </div>
   )
