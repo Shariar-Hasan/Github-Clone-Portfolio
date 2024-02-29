@@ -1,9 +1,9 @@
-import { SearchParamsType } from '@/types/propsTypes'
+import { LoginType, SearchParamsType } from '@/types/propsTypes'
 import { mediumUserName } from '@/utils/userInfoContants'
 import { BASE_URL } from '@/utils/siteConstants'
 import { SlUserFollowing } from 'react-icons/sl'
 
-//User section
+// ? User section
 export const getUser = async () => {
   const user = await fetch(`${BASE_URL}/api/github`, {
     next: {
@@ -14,20 +14,20 @@ export const getUser = async () => {
   return data
 }
 
-//Blogs section
-export const getBlogs = async () => {
-  const user = await fetch(
-    `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${mediumUserName}`,
-    {
-      mode: 'no-cors',
-      next: {
-        revalidate: 3600 * 24,
-      },
-    }
-  )
-  const data = await user.json()
-  return data
-}
+// ? Blogs section
+// export const getBlogs = async () => {
+//   const user = await fetch(
+//     `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${mediumUserName}`,
+//     {
+//       mode: 'no-cors',
+//       next: {
+//         revalidate: 3600 * 24,
+//       },
+//     }
+//   )
+//   const data = await user.json()
+//   return data
+// }
 
 export const getSingleBlog = async (id: string) => {
   const user = await fetch(`${BASE_URL}/api/blogs/${id}`, {
@@ -48,7 +48,7 @@ export const getRelatedBlogs = async (id: string) => {
   return data
 }
 
-//Projects section
+// ? Projects section
 export const getProjects = async (searchParams: SearchParamsType) => {
   const newQueryString = Object.keys(searchParams)
     .map((key) => `${key}=${searchParams[key]}`)
@@ -79,7 +79,7 @@ export const getOtherProjects = async (slug: string) => {
   return data
 }
 
-//Award section
+// ? Award section
 export const getAwards = async (searchParams: SearchParamsType) => {
   const newQueryString = Object.keys(searchParams)
     .map((key) => `${key}=${searchParams[key]}`)
@@ -88,6 +88,37 @@ export const getAwards = async (searchParams: SearchParamsType) => {
     next: {
       revalidate: 5,
     },
+  })
+  const data = await result.json()
+  return data
+}
+
+export const getSingleAward = async (slug: string) => {
+  const result = await fetch(`${BASE_URL}/api/awards/${slug}`, {
+    cache: 'force-cache',
+  })
+  const data = await result.json()
+  return data
+}
+export const getOtherAwards = async (slug: string) => {
+  const result = await fetch(`${BASE_URL}/api/awards/others/${slug}`, {
+    next: {
+      revalidate: 24 * 3600,
+    },
+  })
+  const data = await result.json()
+  return data
+}
+
+// Authenticate user
+
+export const login = async ({ email, password }: LoginType) => {
+  const result = await fetch(`${BASE_URL}/api/auth/login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, password }),
   })
   const data = await result.json()
   return data

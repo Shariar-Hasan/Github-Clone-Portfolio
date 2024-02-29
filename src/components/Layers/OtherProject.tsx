@@ -4,8 +4,12 @@ import ProjectCard from '../SmallUI/cards/ProjectCard'
 import { getOtherProjects } from '@/actions/GET'
 import { ProjectType } from '@/types/propsTypes'
 import NoItemAvailable from '../SmallUI/NoItemAvailable'
+import { BASE_URL } from '@/utils/siteConstants'
 
 const OtherProject = async ({ slug }: { slug: string }) => {
+  if (!BASE_URL) {
+    return null;
+  }
   const { data, success } = await getOtherProjects(slug)
   // console.log({ data, success });
   return (

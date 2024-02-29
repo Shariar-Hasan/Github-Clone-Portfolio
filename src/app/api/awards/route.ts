@@ -16,11 +16,9 @@ export const GET = async (req: NextRequest): Promise<NextResponse> => {
       createdAt: queryParams.get('sort') === 'desc' ? -1 : 1,
     })
     await disconnectFromDb()
-    // console.log({ awards: awards.length, sort: queryParams.get('sort') })
     return NextResponse.json({ data: awards, success: true })
   } catch (error: any) {
-    // console.log({ error })
-    return NextResponse.json({ data: error.message, success: true })
+    return NextResponse.json({ data: error.message, success: false })
   }
 }
 

@@ -11,6 +11,9 @@ import SinglePageSideBox from './SinglePageSideBox'
 import parse from 'html-react-parser'
 
 const SingleProjectShow = async ({ slug }: { slug: string }) => {
+  if (!BASE_URL) {
+    return null
+  }
   const { data, success } = await getSingleProject(slug)
   const {
     _id,
@@ -59,15 +62,17 @@ const SingleProjectShow = async ({ slug }: { slug: string }) => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 translate-y-[-200px] z-[11] max-w-7xl mx-auto px-2">
               <div className="md:col-span-3">
-                <h1 className="text-4xl font-bold mb-2">{title}</h1>
-                
-                <div className="flex items-center mb-4">
+                <h1 className="text-2xl md:text-6xl font-bold mb-2">{title}</h1>
+
+                <div className="flex items-center mb-4 text-base md:text-lg">
                   <span className="mr-2">Category:</span>
                   <span className="">{category}</span>
                 </div>
-                <div className="my-8 text-description">{parse(description)}</div>
+                <div className="my-8 text-description ">
+                  {parse(description)}
+                </div>
 
-                <div className="flex justify-between items-center mt-4">
+                <div className="flex justify-between items-center mt-4 text-xs md:text-base">
                   <div>
                     <span className="text-site-dimmed mr-2">Links:</span>
                     {links?.map(
@@ -80,7 +85,7 @@ const SingleProjectShow = async ({ slug }: { slug: string }) => {
                             href={url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-blue-500"
+                            className="text-brand"
                           >
                             {title}
                           </a>
