@@ -8,7 +8,7 @@ import { BASE_URL } from '@/utils/siteConstants'
 
 const OtherProject = async ({ slug }: { slug: string }) => {
   if (!BASE_URL) {
-    return null;
+    return <div>BASE URL not found</div>;
   }
   const { data, success } = await getOtherProjects(slug)
   // console.log({ data, success });

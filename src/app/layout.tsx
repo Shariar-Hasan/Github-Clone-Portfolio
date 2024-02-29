@@ -1,33 +1,33 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { NextFont } from "next/dist/compiled/@next/font";
-import StoreProvider from "@/components/BaseUI/StoreProvider";
-import ScrollToTop from "@/components/SmallUI/ScrollToTop";
-import { Toaster } from "react-hot-toast";
-import HeadNavbar from "@/components/Layers/HeadNavbar";
-import Navbar from "@/components/Layers/Navbar";
-import { getUser } from "@/actions/GET";
-import { BASE_URL } from "@/utils/siteConstants";
-import { Metadata } from "next";
-import NextTopLoader from "nextjs-toploader";
-const inter: NextFont = Inter({ subsets: ["latin"] });
+import { Inter } from 'next/font/google'
+import './globals.css'
+import { NextFont } from 'next/dist/compiled/@next/font'
+import StoreProvider from '@/components/BaseUI/StoreProvider'
+import ScrollToTop from '@/components/SmallUI/ScrollToTop'
+import { Toaster } from 'react-hot-toast'
+import HeadNavbar from '@/components/Layers/HeadNavbar'
+import Navbar from '@/components/Layers/Navbar'
+import { getUser } from '@/actions/GET'
+import { BASE_URL } from '@/utils/siteConstants'
+import { Metadata } from 'next'
+import NextTopLoader from 'nextjs-toploader'
+const inter: NextFont = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Hello from Shariar 👋",
-    template: "%s | Shariar Hasan",
+    absolute: 'Hello from Shariar 👋',
+    template: '%s | Shariar Hasan',
   },
-};
+}
 
 export default async function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   if (!BASE_URL) {
-    return null;
+    return <div>BASE URL not found</div>
   }
-  const { data: userData } = await getUser();
+  const { data: userData } = await getUser()
   return (
     <html lang="en" className="dark scrollbar-brand">
       <head>
@@ -42,7 +42,12 @@ export default async function RootLayout({
       ${inter.className}
       delayed bg-back`}
       >
-        <NextTopLoader  height={2} color="#00ff5d" showSpinner={false} easing="ease-in-out" />
+        <NextTopLoader
+          height={2}
+          color="#00ff5d"
+          showSpinner={false}
+          easing="ease-in-out"
+        />
         <div className="bg-back text-site">
           <StoreProvider>
             <ScrollToTop />
@@ -56,5 +61,5 @@ export default async function RootLayout({
         </div>
       </body>
     </html>
-  );
+  )
 }

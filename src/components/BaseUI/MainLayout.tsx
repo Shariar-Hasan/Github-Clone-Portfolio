@@ -11,7 +11,7 @@ import { Toaster } from "react-hot-toast";
 
 const MainLayout = async ({ children }: ChildrenType) => {
   if (!BASE_URL) {
-    return null;
+    return <div>BASE URL not found</div>;
   }
   const { data: userData } = await getUser();
   return (

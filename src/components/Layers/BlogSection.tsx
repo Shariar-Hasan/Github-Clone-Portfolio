@@ -6,7 +6,7 @@ import { mediumUrl } from '@/utils/shortFunctions'
 import { mediumUserName } from '@/utils/userInfoContants'
 
 const BlogSection = async () => {
-  if (!BASE_URL) return null
+  if (!BASE_URL) return <div>BASE URL not found</div>
   const response = await fetch(`${BASE_URL}/api/blogs`)
   const { data, success } = await response.json()
   const { items } = data

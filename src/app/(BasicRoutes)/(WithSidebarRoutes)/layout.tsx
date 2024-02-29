@@ -6,7 +6,7 @@ import React from "react";
 
 const layout = async ({ children }: { children: React.ReactNode }) => {
   if (!BASE_URL) {
-    return null;
+    return <div>BASE URL not found</div>;
   }
   const { data: userData } = await getUser();
   return (

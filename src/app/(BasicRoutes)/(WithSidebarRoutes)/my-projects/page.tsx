@@ -20,7 +20,7 @@ const ProjectPage = async ({
   searchParams: SearchParamsType
 }) => {
   if (!BASE_URL) {
-    return null
+    return<div>BASE URL not found</div>
   }
   const { data, success } = await getProjects(searchParams)
 
