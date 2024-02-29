@@ -30,7 +30,7 @@ const LoginBox = () => {
   const onSubmit = (data: LoginForm) => {
     // Handle login logic with data.email and data.password
     const salt = bcrypt.genSaltSync(10)
-    data.password = bcrypt.
+    // data.password = bcrypt.
     console.log(data)
   }
   return (
