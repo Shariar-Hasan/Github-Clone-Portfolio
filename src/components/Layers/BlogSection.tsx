@@ -1,14 +1,15 @@
-import BlogCard from "../SmallUI/cards/BlogCard";
-import { MediumBlog } from "@/types/propsTypes";
-import { BASE_URL } from "@/utils/siteConstants";
-import NoItemAvailable from "../SmallUI/NoItemAvailable";
-import { mediumUrl } from "@/utils/shortFunctions";
-import { mediumUserName } from "@/utils/userInfoContants";
+import BlogCard from '../SmallUI/cards/BlogCard'
+import { MediumBlog } from '@/types/propsTypes'
+import { BASE_URL } from '@/utils/siteConstants'
+import NoItemAvailable from '../SmallUI/NoItemAvailable'
+import { mediumUrl } from '@/utils/shortFunctions'
+import { mediumUserName } from '@/utils/userInfoContants'
 
 const BlogSection = async () => {
-  const response = await fetch(`${BASE_URL}/api/blogs`);
-  const { data, success } = await response.json();
-  const { items } = data;
+  if (!BASE_URL) return null
+  const response = await fetch(`${BASE_URL}/api/blogs`)
+  const { data, success } = await response.json()
+  const { items } = data
   // console.log({ items, data, success });
   return (
     <div>
@@ -21,7 +22,7 @@ const BlogSection = async () => {
           </div>
           <p className="text-sm text-site-dimmed mt-10">
             <strong>Note :</strong> Due to medium RSS feed limitation, only last
-            10 blogs can be fetched. If you want to read my blogs you can{" "}
+            10 blogs can be fetched. If you want to read my blogs you can{' '}
             <a
               href={mediumUrl(mediumUserName)}
               target="_blank"
@@ -36,7 +37,7 @@ const BlogSection = async () => {
         <NoItemAvailable text="No Blogs Available" />
       )}
     </div>
-  );
-};
+  )
+}
 
-export default BlogSection;
+export default BlogSection
