@@ -1,6 +1,6 @@
-import { basicInfo } from "@/utils/userInfoContants";
-import { type NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { basicInfo } from '@/utils/userInfoContants'
+import { type NextRequest, NextResponse } from 'next/server'
+import nodemailer from 'nodemailer'
 // Nodemailer setup (use your email service provider's SMTP settings)
 const transporter = nodemailer.createTransport({
   service: process.env.MAIL_SERVICE,
@@ -8,14 +8,14 @@ const transporter = nodemailer.createTransport({
     user: process.env.SENDER_MAIL, // Your email address
     pass: process.env.SENDER_PASS, // Your email password or app-specific password
   },
-});
+})
 
 export const POST = async (req: NextRequest) => {
   try {
-    const data = await req.json();
+    const data = await req.json()
     const mailOptions = {
       to: process.env.SENDER_MAIL,
-      subject: "New Contact message from Your Portfolio - GC",
+      subject: 'New Contact message from Your Portfolio - GC',
       html: `
         <div>
             <h1>Hello ${basicInfo?.name}</h1>
@@ -38,11 +38,11 @@ export const POST = async (req: NextRequest) => {
             </table>
         </div>
     `,
-    };
-    transporter.sendMail(mailOptions);
-    return NextResponse.json({ data: data, success: true });
+    }
+    transporter.sendMail(mailOptions)
+    return NextResponse.json({ data: data, success: true })
   } catch (err) {
-    console.log({ err });
-    return NextResponse.json({ data: err, success: false });
+    // console.log({ err });
+    return NextResponse.json({ data: err, success: false })
   }
-};
+}

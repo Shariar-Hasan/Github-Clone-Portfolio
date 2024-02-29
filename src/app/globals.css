@@ -43,6 +43,9 @@
   .text-brand {
     @apply text-green-500;
   }
+  .text-description {
+    @apply prose dark:prose-invert max-w-full;
+  }
   /* border classes */
   .cornered {
     @apply rounded;

@@ -170,7 +170,7 @@ export const metaDatas: {
 export const educationalInfo: EducationInfoType[] = [
   {
     courseTitle: "B.Sc. in Computer Science and Engineering",
-    shortCourseTitle: "B.Sc",
+    shortCourseTitle: "Honours",
     institution: "University of Chittagong",
     location: "Chittagong, Bangladesh",
     startingYear: 2018,

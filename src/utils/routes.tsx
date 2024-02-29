@@ -79,3 +79,32 @@ export const sideBarRoutes: SideNavRoutesType[][] = [
     },
   ],
 ];
+
+
+export const dashboardRoutes : RoutesType[] = [
+  {
+    title : "Dashboard",
+    path : "/dashboard",
+    icon : <IoBookOutline />,
+  },
+  {
+    title : "Add Project",
+    path : "/dashboard/add-project",
+    icon : <GrProjects />,
+  },
+  {
+    title : "Project List",
+    path : "/dashboard/project-list",
+    icon : <GrProjects />,
+  },
+  {
+    title : "Add Award",
+    path : "/dashboard/add-award",
+    icon : <FaBlog />,
+  },
+  {
+    title : "Award List",
+    path : "/dashboard/award-list",
+    icon : <FaBlog />,
+  },
+]
