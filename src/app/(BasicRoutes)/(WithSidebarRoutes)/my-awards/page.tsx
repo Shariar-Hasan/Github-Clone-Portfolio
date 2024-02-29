@@ -18,7 +18,7 @@ const AchievementPage = async ({
 }: {
   searchParams: SearchParamsType;
 }) => {
-  if (!BASE_URL) return null;
+  if (!BASE_URL) return<div>BASE URL not found</div>;
   const { data, success } = await getAwards(searchParams);
   return (
     <div>

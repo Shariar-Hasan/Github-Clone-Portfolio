@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 const OtherAwardsSection = async ({ slug }: { slug: string }) => {
   if (!BASE_URL) {
-    return null
+    return <div>BASE URL not found</div>
   }
   const { data, success } = await getOtherAwards(slug)
   // console.log({ data, success });

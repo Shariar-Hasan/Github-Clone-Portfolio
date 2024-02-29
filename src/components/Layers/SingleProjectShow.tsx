@@ -12,7 +12,7 @@ import parse from 'html-react-parser'
 
 const SingleProjectShow = async ({ slug }: { slug: string }) => {
   if (!BASE_URL) {
-    return null
+    return <div>BASE URL not found</div>
   }
   const { data, success } = await getSingleProject(slug)
   const {

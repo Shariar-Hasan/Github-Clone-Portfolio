@@ -8,7 +8,7 @@ import SubHeading from "../SmallUI/SubHeading";
 
 const RelatedBlogsSection = async ({ slug }: { slug: string }) => {
   if (!BASE_URL) {
-    return null;
+    return <div>BASE URL not found</div>;
   }
   const { data, success } = await getRelatedBlogs(slug);
   if (!success) {

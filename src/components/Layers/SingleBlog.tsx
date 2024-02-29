@@ -12,7 +12,7 @@ import { Metadata } from "next";
 
 const SingleBlog = async ({ slug }: { slug: string }) => {
   if (!BASE_URL) {
-    return null;
+    return <div>BASE URL not found</div>;
   }
   const { data, success } = await getSingleBlog(slug);
   if (!success) {
