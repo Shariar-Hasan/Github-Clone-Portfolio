@@ -9,15 +9,16 @@ export const GET = async (req: NextRequest): Promise<NextResponse> => {
       ? queryParams.get('category')
       : { $exists: true },
   }
-  // console.log({ queryParams, dbQueryObject });
   try {
     await connectToDb()
     const projects = await Project.find({ ...dbQueryObject }).sort({
       createdAt: queryParams.get('sort') === 'desc' ? -1 : 1,
     })
+
+    console.log({ queryParams, dbQueryObject, projects })
     return NextResponse.json({ data: projects, success: true })
   } catch (error: any) {
-    return NextResponse.json({ data: error.message, success: false })
+    return NextResponse.json({ data: error, success: false })
   }
 }
 export const POST = async (req: NextRequest): Promise<NextResponse> => {

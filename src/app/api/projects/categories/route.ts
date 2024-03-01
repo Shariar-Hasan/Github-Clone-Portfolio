@@ -23,6 +23,6 @@ export const GET = async (): Promise<NextResponse> => {
     // console.log({ categories });
     return NextResponse.json({ data: categories, success: true })
   } catch (error: any) {
-    return NextResponse.json({ data: error.message, success: true })
+    return NextResponse.json({ data: error, success: true })
   }
 }

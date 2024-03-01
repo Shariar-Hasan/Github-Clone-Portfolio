@@ -18,7 +18,7 @@ export const GET = async (req: NextRequest): Promise<NextResponse> => {
     await disconnectFromDb()
     return NextResponse.json({ data: awards, success: true })
   } catch (error: any) {
-    return NextResponse.json({ data: error.message, success: false })
+    return NextResponse.json({ data: error, success: false })
   }
 }
 

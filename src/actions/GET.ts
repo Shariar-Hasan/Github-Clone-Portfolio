@@ -56,7 +56,7 @@ export const getProjects = async (searchParams: SearchParamsType) => {
   // console.log({ newQueryString });
   const result = await fetch(`${BASE_URL}/api/projects?${newQueryString}`, {
     next: {
-      revalidate: 20,
+      revalidate: 3600 * 24,
     },
   })
   const data = await result.json()
@@ -86,7 +86,7 @@ export const getAwards = async (searchParams: SearchParamsType) => {
     .join('&')
   const result = await fetch(`${BASE_URL}/api/awards?${newQueryString}`, {
     next: {
-      revalidate: 5,
+      revalidate: 24 * 3600,
     },
   })
   const data = await result.json()
