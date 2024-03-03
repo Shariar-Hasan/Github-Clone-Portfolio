@@ -1,6 +1,6 @@
 import { LoginType, SearchParamsType } from '@/types/propsTypes'
 import { mediumUserName } from '@/utils/userInfoContants'
-import { BASE_URL } from '@/utils/siteConstants'
+import { BASE_URL } from '@/utils/SiteRelatedInfo/siteConstants'
 import { SlUserFollowing } from 'react-icons/sl'
 
 // ? User section
@@ -19,9 +19,8 @@ export const getBlogs = async () => {
   const user = await fetch(
     `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${mediumUserName}`,
     {
-      mode: 'no-cors',
       next: {
-        revalidate: 3600 * 24,
+        revalidate: 24,
       },
     }
   )
@@ -32,7 +31,7 @@ export const getBlogs = async () => {
 export const getSingleBlog = async (id: string) => {
   const blog = await fetch(`${BASE_URL}/api/blogs/${id}`, {
     next: {
-      revalidate: 3600 * 24,
+      revalidate: 24,
     },
   })
   const data = await blog.json()
@@ -41,7 +40,7 @@ export const getSingleBlog = async (id: string) => {
 export const getRelatedBlogs = async (id: string) => {
   const user = await fetch(`${BASE_URL}/api/blogs/related/${id}`, {
     next: {
-      revalidate: 3600 * 24,
+      revalidate: 24,
     },
   })
   const data = await user.json()
@@ -56,7 +55,7 @@ export const getProjects = async (searchParams: SearchParamsType) => {
   // console.log({ newQueryString });
   const result = await fetch(`${BASE_URL}/api/projects?${newQueryString}`, {
     next: {
-      revalidate: 3600 * 24,
+      revalidate: 36,
     },
   })
   const data = await result.json()
@@ -64,7 +63,9 @@ export const getProjects = async (searchParams: SearchParamsType) => {
 }
 export const getSingleProject = async (slug: string) => {
   const result = await fetch(`${BASE_URL}/api/projects/${slug}`, {
-    cache: 'force-cache',
+    next: {
+      revalidate: 24,
+    },
   })
   const data = await result.json()
   return data
@@ -72,7 +73,7 @@ export const getSingleProject = async (slug: string) => {
 export const getOtherProjects = async (slug: string) => {
   const result = await fetch(`${BASE_URL}/api/projects/others/${slug}`, {
     next: {
-      revalidate: 24 * 3600,
+      revalidate: 24,
     },
   })
   const data = await result.json()
@@ -86,7 +87,7 @@ export const getAwards = async (searchParams: SearchParamsType) => {
     .join('&')
   const result = await fetch(`${BASE_URL}/api/awards?${newQueryString}`, {
     next: {
-      revalidate: 24 * 3600,
+      revalidate: 24,
     },
   })
   const data = await result.json()
@@ -95,7 +96,9 @@ export const getAwards = async (searchParams: SearchParamsType) => {
 
 export const getSingleAward = async (slug: string) => {
   const result = await fetch(`${BASE_URL}/api/awards/${slug}`, {
-    cache: 'force-cache',
+    next: {
+      revalidate: 24,
+    },
   })
   const data = await result.json()
   return data
@@ -103,7 +106,7 @@ export const getSingleAward = async (slug: string) => {
 export const getOtherAwards = async (slug: string) => {
   const result = await fetch(`${BASE_URL}/api/awards/others/${slug}`, {
     next: {
-      revalidate: 24 * 3600,
+      revalidate: 24,
     },
   })
   const data = await result.json()

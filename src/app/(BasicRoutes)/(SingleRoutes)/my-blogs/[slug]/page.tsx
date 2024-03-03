@@ -2,7 +2,8 @@ import SingleBlog from '@/components/Layers/SingleBlog'
 import RelatedBlogsSection from '@/components/Layers/RelatedBlogsSection'
 import { getSingleBlog } from '@/actions/GET'
 import { Metadata } from 'next'
-import { BASE_URL } from '@/utils/siteConstants'
+import { BASE_URL } from '@/utils/SiteRelatedInfo/siteConstants'
+import { descriptionShortener } from '@/utils/shortFunctions'
 
 export const generateMetadata = async ({
   params,
@@ -20,11 +21,7 @@ export const generateMetadata = async ({
   const { title, description, author, link } = data
   return {
     title: title,
-    description:
-      description.length > 150
-        ? description.slice(0, 150) + '...'
-        : description,
-
+    description: descriptionShortener(description, 150),
     authors: [
       {
         name: author,

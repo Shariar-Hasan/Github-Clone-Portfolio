@@ -20,9 +20,9 @@ const SinglePageSideBox = ({
           {tagHeader}:
         </h5>
         <div className="flex items-center mb-4 flex-wrap gap-3">
-          {tags?.map((tag: string) => (
+          {tags?.map((tag: string, i: number) => (
             <span
-              key={tag}
+              key={tag + i}
               className="bg-block px-2  py-[1px]  rounded-md text-sm border border-gray-500 border-opacity-50"
             >
               {tag}

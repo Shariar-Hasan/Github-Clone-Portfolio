@@ -8,7 +8,7 @@ export const GET = async (
 ): Promise<NextResponse> => {
   try {
     await connectToDb()
-    const projects = await Project.find({
+    const otherProjects = await Project.find({
       slug: {
         $ne: slug,
       },
@@ -17,7 +17,7 @@ export const GET = async (
         createdAt: -1,
       })
       .limit(9)
-    return NextResponse.json({ data: projects, success: true })
+    return NextResponse.json({ data: otherProjects, success: true })
   } catch (error: any) {
     return NextResponse.json({ data: error, success: false })
   }

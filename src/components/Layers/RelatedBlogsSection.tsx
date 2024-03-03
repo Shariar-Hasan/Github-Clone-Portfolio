@@ -1,5 +1,5 @@
 import { getRelatedBlogs } from "@/actions/GET";
-import { BASE_URL } from "@/utils/siteConstants";
+import { BASE_URL } from "@/utils/SiteRelatedInfo/siteConstants";
 import React from "react";
 import NoItemAvailable from "../SmallUI/NoItemAvailable";
 import BlogCard from "../SmallUI/cards/BlogCard";

@@ -2,9 +2,10 @@ import React from 'react'
 import NoItemAvailable from '../SmallUI/NoItemAvailable'
 import SubHeading from '../SmallUI/SubHeading'
 import { getOtherAwards } from '@/actions/GET'
-import { BASE_URL } from '@/utils/siteConstants'
+import { BASE_URL } from '@/utils/SiteRelatedInfo/siteConstants'
 import { AwardType } from '@/types/propsTypes'
 import Link from 'next/link'
+import { descriptionShortener } from '@/utils/shortFunctions'
 
 const OtherAwardsSection = async ({ slug }: { slug: string }) => {
   if (!BASE_URL) {
@@ -29,14 +30,19 @@ const OtherAwardsSection = async ({ slug }: { slug: string }) => {
                     {title}
                   </h3>
                   <p className="text-dimmed text-xs">
-                    {description.split(' ').slice(0, 5).join(' ')}...
+                    {descriptionShortener(description, 5)}...
                   </p>
                 </Link>
               </div>
             )
           })}
           <div className=" flex items-center justify-center mt-3">
-            <Link href={`/my-awards/`} className='px-2 py-0.5 border hover:border-brand cornered delayed border-gray-500 border-opacity-25'>View More</Link>
+            <Link
+              href={`/my-awards/`}
+              className="px-2 py-0.5 border hover:border-brand cornered delayed border-gray-500 border-opacity-25"
+            >
+              View More
+            </Link>
           </div>
         </div>
       ) : (

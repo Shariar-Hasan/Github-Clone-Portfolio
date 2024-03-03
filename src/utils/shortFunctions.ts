@@ -42,3 +42,28 @@ export const handleCopyToClipBoard = async (text: string) => {
     document.body.removeChild(textArea)
   }
 }
+
+// stop scroll event by wheel
+export const stopScrollabilityByWheel = (): (() => void) => {
+  const stopScrollFunc = (e: WheelEvent): void => {
+    e.preventDefault()
+  }
+  window.addEventListener('wheel', stopScrollFunc, {
+    passive: false,
+  })
+  return (): void => {
+    window.removeEventListener('wheel', stopScrollFunc)
+  }
+}
+
+// shortener for description
+export const descriptionShortener = (
+  description: string,
+  length: number
+): string => {
+  const splittedDescription = description.split(' ')
+  const joinedDescription = splittedDescription.slice(0, length).join(' ')
+  return splittedDescription.length <= length
+    ? joinedDescription
+    : `${joinedDescription} . . . `
+}

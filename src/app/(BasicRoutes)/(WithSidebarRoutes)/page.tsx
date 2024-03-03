@@ -1,6 +1,6 @@
 import ExpertiseSection from "@/components/Layers/ExpertiseSection";
 import { basicInfo, metaDatas } from "@/utils/userInfoContants";
-import { OS, skills, tools } from "@/utils/expertise";
+import { OS, skills, tools } from "@/utils/SiteRelatedInfo/expertise";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

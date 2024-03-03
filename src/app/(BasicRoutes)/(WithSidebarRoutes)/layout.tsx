@@ -1,7 +1,7 @@
 
 import { getUser } from "@/actions/GET";
 import SideAboutMe from "@/components/Layers/SideAboutMe";
-import { BASE_URL } from "@/utils/siteConstants";
+import { BASE_URL } from "@/utils/SiteRelatedInfo/siteConstants";
 import React from "react";
 
 const layout = async ({ children }: { children: React.ReactNode }) => {

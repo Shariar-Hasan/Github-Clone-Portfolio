@@ -7,7 +7,7 @@ import { Toaster } from 'react-hot-toast'
 import HeadNavbar from '@/components/Layers/HeadNavbar'
 import Navbar from '@/components/Layers/Navbar'
 import { getUser } from '@/actions/GET'
-import { BASE_URL } from '@/utils/siteConstants'
+import { BASE_URL } from '@/utils/SiteRelatedInfo/siteConstants'
 import { Metadata } from 'next'
 import NextTopLoader from 'nextjs-toploader'
 const inter: NextFont = Inter({ subsets: ['latin'] })

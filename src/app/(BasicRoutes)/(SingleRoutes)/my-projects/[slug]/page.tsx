@@ -1,9 +1,10 @@
 import { getSingleProject } from '@/actions/GET'
 import OtherProject from '@/components/Layers/OtherProject'
 import SingleProjectShow from '@/components/Layers/SingleProjectShow'
-import { BASE_URL } from '@/utils/siteConstants'
+import { BASE_URL } from '@/utils/SiteRelatedInfo/siteConstants'
 import { basicInfo } from '@/utils/userInfoContants'
 import { Metadata, ResolvingMetadata } from 'next'
+import { Suspense } from 'react'
 export const generateMetadata = async (
   {
     params: { slug },
@@ -48,7 +49,9 @@ const SingleProjectPage = ({
   return (
     <div className="text-site">
       <SingleProjectShow slug={slug} />
-      <OtherProject slug={slug} />
+      <Suspense fallback={<div>Loading . . . . .. . .</div>}>
+        <OtherProject slug={slug} />
+      </Suspense>
     </div>
   )
 }
