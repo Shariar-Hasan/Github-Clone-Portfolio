@@ -7,7 +7,7 @@ import parse from "html-react-parser";
 import BackButton from "@/components/SmallUI/BackButton";
 import { PiMediumLogoFill } from "react-icons/pi";
 import toast from "react-hot-toast";
-import { BASE_URL } from "@/utils/siteConstants";
+import { BASE_URL } from "@/utils/SiteRelatedInfo/siteConstants";
 import { Metadata } from "next";
 
 const SingleBlog = async ({ slug }: { slug: string }) => {

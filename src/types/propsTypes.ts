@@ -75,7 +75,7 @@ export type LoginType = {
   password: string
   role?: 'ADMIN' | 'GUEST'
 }
-export type SearchParamsType = { [key: string]: string }
+export type SearchParamsType = { [key: string]: string | string[] | undefined }
 
 export type SelectTagListType = { title: string; value: string }
 

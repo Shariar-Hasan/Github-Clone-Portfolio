@@ -13,6 +13,7 @@ export const GET = async (
     if (!singleProject) {
       throw new Error('No project found with the specified slug.')
     }
+    console.log({ singleProject: singleProject?.title || 'somethign' })
     return NextResponse.json({ data: singleProject, success: true })
   } catch (error: any) {
     return NextResponse.json({ data: error, success: false })

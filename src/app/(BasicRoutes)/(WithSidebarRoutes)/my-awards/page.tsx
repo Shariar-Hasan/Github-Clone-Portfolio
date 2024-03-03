@@ -4,9 +4,11 @@ import FilterSection from "@/components/Layers/FilterSection";
 import NoItemAvailable from "@/components/SmallUI/NoItemAvailable";
 import { SearchParamsType } from "@/types/propsTypes";
 import { metaDatas } from "@/utils/userInfoContants";
-import { BASE_URL } from "@/utils/siteConstants";
+import { BASE_URL } from "@/utils/SiteRelatedInfo/siteConstants";
 import { Metadata } from "next";
 import React from "react";
+
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: metaDatas?.awardPage.title || "Hall of Fame",

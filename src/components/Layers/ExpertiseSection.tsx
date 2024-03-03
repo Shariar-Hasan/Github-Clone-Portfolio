@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import SubHeading from "../SmallUI/SubHeading";
-import { ToolType } from "@/utils/expertise";
+import { ToolType } from "@/utils/SiteRelatedInfo/expertise";
 import ExpertiseCard from "../SmallUI/cards/ExpertiseCard";
 import { RevealWrapper } from "next-reveal";
 type PropsType = {
@@ -17,7 +17,7 @@ const ExpertiseSection = ({ heading, list }: PropsType) => {
           <RevealWrapper
             key={index}
             origin="center"
-            delay={index * 200}
+            delay={index * 30}
             duration={1000}
             distance="0px"
             reset={false}

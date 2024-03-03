@@ -5,7 +5,7 @@ import SideAboutMe from "../Layers/SideAboutMe";
 import { ChildrenType } from "@/types/propsTypes";
 import { getUser } from "@/actions/GET";
 import StoreProvider from "./StoreProvider";
-import { BASE_URL } from "@/utils/siteConstants";
+import { BASE_URL } from "@/utils/SiteRelatedInfo/siteConstants";
 import ScrollToTop from "../SmallUI/ScrollToTop";
 import { Toaster } from "react-hot-toast";
 

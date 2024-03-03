@@ -28,7 +28,7 @@ const SideAboutMe = ({ userData }: { userData: GitHubUser }) => {
       <p className="text-sm">{bio}</p>
       <Link href={CVLink} target="_blank" rel="noreferrer noopenner">
         <span className="sr-only">Resume Download Button</span>
-        <button className="w-full bg-block-hard cornered my-3 py-1 border border-gray-300/50 active:scale-[.99] text-sm">
+        <button className="w-full bg-block-hard cornered my-3 py-1 border border-gray-300/50 active:scale-[.99] text-sm hover:border-brand hover:text-brand">
           Download Resume
         </button>
       </Link>

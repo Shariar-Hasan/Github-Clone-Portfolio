@@ -5,7 +5,7 @@ import ViewFullImage from '../SmallUI/ViewFullImage'
 import BackButton from '../SmallUI/BackButton'
 import { PiMessengerLogoFill, PiPinterestLogoFill } from 'react-icons/pi'
 import LinkCopyUi from '../SmallUI/LinkCopyUi'
-import { BASE_URL } from '@/utils/siteConstants'
+import { BASE_URL } from '@/utils/SiteRelatedInfo/siteConstants'
 import moment from 'moment'
 import SinglePageSideBox from './SinglePageSideBox'
 import parse from 'html-react-parser'
@@ -31,6 +31,7 @@ const SingleProjectShow = async ({ slug }: { slug: string }) => {
     <>
       {success && data ? (
         <div className="">
+          {/* Top Side - Back Button & Links */}
           <div className="px-10 flex justify-between items-center sticky top-0 bg-back z-10">
             <BackButton />
             <div className="flex flex-wrap gap-1">
@@ -49,8 +50,9 @@ const SingleProjectShow = async ({ slug }: { slug: string }) => {
               )}
             </div>
           </div>
-          <div className="">
-            <div className="rounded-lg mb-4 overflow-hidden h-[80vh]  relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gradient-to-b after:from-transparent after:via-transparent dark:after:to-[#0D1117] after:to-[#F6F8FA] z-[0]">
+
+          <div className=" my-10">
+            <div className="rounded-lg  overflow-hidden  relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gradient-to-b after:from-transparent after:via-transparent dark:after:to-[#0D1117] after:to-[#F6F8FA] z-[0]">
               <Image
                 width={800}
                 height={800}
@@ -60,7 +62,7 @@ const SingleProjectShow = async ({ slug }: { slug: string }) => {
               />
               {/* <ViewFullImage src={thumbnail} />  */}
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 translate-y-[-200px] z-[11] max-w-7xl mx-auto px-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:translate-y-[-200px] z-[11] max-w-7xl mx-auto px-2 gap-x-4 gap-y-10">
               <div className="md:col-span-3">
                 <h1 className="text-2xl md:text-6xl font-bold mb-2">{title}</h1>
 
@@ -80,7 +82,7 @@ const SingleProjectShow = async ({ slug }: { slug: string }) => {
                         { title, url }: { title: string; url: string },
                         index: number
                       ) => (
-                        <React.Fragment key={title}>
+                        <React.Fragment key={title+index}>
                           <a
                             href={url}
                             target="_blank"

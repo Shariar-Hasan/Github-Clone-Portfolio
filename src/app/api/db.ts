@@ -1,4 +1,4 @@
-import { DATABASE_URL } from '@/utils/siteConstants'
+import { DATABASE_URL } from '@/utils/SiteRelatedInfo/siteConstants'
 import mongoose from 'mongoose'
 
 export const connectToDb = async () => {

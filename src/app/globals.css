@@ -9,7 +9,7 @@
 @layer components {
   /* back gorund clases */
   .bg-back {
-    @apply bg-[#F6F8FA] dark:bg-[#0D1117] duration-200;
+    @apply bg-[#fafbff] dark:bg-[#0D1117] duration-200;
   }
   .bg-front {
     @apply bg-[#FFFFFF] dark:bg-[#010409] duration-200;
@@ -21,7 +21,7 @@
     @apply bg-green-500 duration-200;
   }
   .bg-block-hard {
-    @apply bg-gray-200 dark:bg-gray-800 duration-200;
+    @apply bg-[#FFFFFF] dark:bg-gray-800 duration-200;
   }
 
   /* text classes */

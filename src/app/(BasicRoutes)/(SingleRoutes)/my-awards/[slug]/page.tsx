@@ -1,7 +1,7 @@
 import { getSingleAward } from '@/actions/GET'
 import OtherAwardsSection from '@/components/Layers/OtherAwardsSection'
 import SingleAwardShow from '@/components/Layers/SingleAwardShow'
-import { BASE_URL } from '@/utils/siteConstants'
+import { BASE_URL } from '@/utils/SiteRelatedInfo/siteConstants'
 import { basicInfo } from '@/utils/userInfoContants'
 import { Metadata, ResolvingMetadata } from 'next'
 import React from 'react'

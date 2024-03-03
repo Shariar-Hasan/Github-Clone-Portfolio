@@ -63,7 +63,7 @@ export const socialLinks: ContactIconType[] = [
     media: "Medium",
   },
   // {
-  //   // any other url you wnat
+  //   ! any other url you wnat
   //   title: "title of your social acount name",
   //   icon: icons jsx elemetn,
   //   url: url link,

@@ -1,6 +1,6 @@
 'use client'
 import { handleCopyToClipBoard } from '@/utils/shortFunctions'
-import { BASE_URL } from '@/utils/siteConstants'
+import { BASE_URL } from '@/utils/SiteRelatedInfo/siteConstants'
 import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 import toast from 'react-hot-toast'

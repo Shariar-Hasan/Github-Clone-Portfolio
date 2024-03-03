@@ -23,7 +23,7 @@ const ShowProjectsSection = async ({
           })}
         </div>
       ) : (
-        <NoItemAvailable text="No Project Found" />
+        <NoItemAvailable text="No Project Found in here" />
       )}
     </>
   )

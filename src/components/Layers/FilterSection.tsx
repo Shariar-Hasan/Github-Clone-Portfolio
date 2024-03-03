@@ -2,7 +2,7 @@
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import SelectInput from '../FormElements/SelectNonForm'
-import { BASE_URL } from '@/utils/siteConstants'
+import { BASE_URL } from '@/utils/SiteRelatedInfo/siteConstants'
 import Select from '../FormElements/SelectNonForm'
 // custom sort list data
 const sortList: { title: string; value: string }[] = [
@@ -26,14 +26,18 @@ const FilterSection = ({
   const [categoryList, setCategoryList] = useState<CategoryType[]>([])
   // fetch categories from database
   useEffect(() => {
-    fetch(`${categoryFetchString}`)
+    fetch(`${categoryFetchString}`, {
+      cache: 'no-cache',
+    })
       .then((response) => response.json())
       .then((data: { data: CategoryType[] }) => {
-        const categoryData = data.data
-        const totalData = data?.data?.reduce((acc, { count }) => acc + count, 0)
+        const categoryData = data?.data
+        console.log({ data, categoryData })
+        const totalData = categoryData
+          ? categoryData?.reduce((acc, { count }) => acc + count, 0)
+          : 0
         categoryData.unshift({ category: 'All', count: totalData })
         setCategoryList(categoryData)
-        // console.log("Re Fetched categorylist");
       })
   }, [])
 
@@ -54,7 +58,7 @@ const FilterSection = ({
       <div className="flex md:flex-row flex-col items-center justify-end gap-2 my-5">
         <div className="min-w-[150px]">
           <Select
-            defaultValue="All"
+            defaultValue={searchParams.get('category') || 'All'}
             label="Select Category"
             list={categoryList.map(({ category, count }: CategoryType) => ({
               title: `${category} (${count})`,

@@ -1,4 +1,4 @@
-import { ToolType } from "@/utils/expertise";
+import { ToolType } from "@/utils/SiteRelatedInfo/expertise";
 import React from "react";
 
 const ExpertiseCard = ({ item }: { item: ToolType }) => {

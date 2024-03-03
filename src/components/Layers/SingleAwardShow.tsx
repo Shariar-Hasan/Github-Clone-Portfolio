@@ -4,7 +4,7 @@ import React from 'react'
 import parse from 'html-react-parser'
 import moment from 'moment'
 import BackButton from '../SmallUI/BackButton'
-import { BASE_URL } from '@/utils/siteConstants'
+import { BASE_URL } from '@/utils/SiteRelatedInfo/siteConstants'
 const SingleAwardShow = async ({ slug }: { slug: string }) => {
   if (!BASE_URL) {
     return <div>BASE URL not found</div>

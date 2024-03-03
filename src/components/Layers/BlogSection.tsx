@@ -1,6 +1,6 @@
 import BlogCard from '../SmallUI/cards/BlogCard'
 import { MediumBlog } from '@/types/propsTypes'
-import { BASE_URL } from '@/utils/siteConstants'
+import { BASE_URL } from '@/utils/SiteRelatedInfo/siteConstants'
 import NoItemAvailable from '../SmallUI/NoItemAvailable'
 import { mediumUrl } from '@/utils/shortFunctions'
 import { mediumUserName } from '@/utils/userInfoContants'
